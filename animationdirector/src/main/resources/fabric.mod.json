@@ -1,0 +1,35 @@
+{
+  "schemaVersion": 1,
+  "id": "animationframework",
+  "version": "${version}",
+  "name": "Animation Director",
+  "description": "Mod that allows to play geckolib animations with one or more entities or players",
+  "authors": [
+    "L1Z0"
+  ],
+  "icon": "assets/animationframework/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "com.afwid.AnimationFramework"
+    ],
+    "client": [
+      "com.afwid.AnimationFrameworkClient"
+    ],
+    "fabric-datagen": [
+      "com.afwid.AnimationFrameworkDataGenerator"
+    ]
+  },
+  "mixins": [
+    "animationframework.mixins.json",
+    { "config": "animationframework.client.mixins.json", "environment": "client" }
+  ]
+,
+  "depends": {
+    "fabricloader": ">=0.16.14",
+    "minecraft": "~1.20.1",
+    "java": ">=17",
+    "fabric-api": "*",
+    "geckolib": ">=4.8.4"
+  }
+}

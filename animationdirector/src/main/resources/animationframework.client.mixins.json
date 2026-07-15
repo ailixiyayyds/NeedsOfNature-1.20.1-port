@@ -1,0 +1,24 @@
+{
+  "required": true,
+  "package": "com.afwid.mixin.client",
+  "compatibilityLevel": "JAVA_17",
+  "client": [
+    "CameraAnimationMixin",
+    "CameraGeckoCompatMixin",
+    "ClientPlayerMovementMixin",
+    "ClientPlayerInteractionManagerMixin",
+    "EntityRendererAnimationNameTagMixin",
+    "EntityRenderManagerMixin",
+    "HeldItemRendererMixin",
+    "KeyboardInputMixin",
+    "LivingEntityJumpMixin",
+    "LivingEntityRendererAnimationNameTagMixin",
+    "LivingEntityRendererMixin",
+    "MinecraftClientMixin",
+    "MouseScrollAnimationZoomMixin",
+    "WorldRendererFirstPersonActorMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}

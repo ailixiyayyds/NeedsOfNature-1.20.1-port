@@ -1,0 +1,23 @@
+{
+	"required": true,
+	"package": "com.afwid.mixin",
+	"compatibilityLevel": "JAVA_17",
+	"mixins": [
+		"EntityPushAwayMixin",
+		"LivingEntityPushableMixin",
+		"LivingEntityDamageMixin",
+		"MobEntityIgnoreAttackersMixin",
+		"ServerPlayNetworkHandlerMixin",
+		"TargetPredicateMixin"
+	],
+	"client": [
+		"client.EntityPushAwayMixin",
+		"client.LivingEntityPushableMixin"
+	],
+	"injectors": {
+		"defaultRequire": 1
+	},
+	"overwrites": {
+		"requireAnnotations": true
+	}
+}
