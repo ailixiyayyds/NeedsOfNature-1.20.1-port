@@ -1,0 +1,9 @@
+Summary for C:\Users\anno\Desktop\mod\animationdirector-1.3.1.jar
+Decompiled with CFR 0.152
+
+
+com.afwid.client.compat.wildfire.AfwWildfireGenderCompat
+----------------------------
+
+neutralizeRenderPose(net.minecraft.class_10042 )
+  Unable to fully structure code
