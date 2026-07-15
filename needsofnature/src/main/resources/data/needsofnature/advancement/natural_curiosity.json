@@ -1,0 +1,23 @@
+{
+    "parent":  "needsofnature:root",
+    "display":  {
+                    "icon":  {
+                                 "id":  "minecraft:flower_banner_pattern"
+                             },
+                    "title":  {
+                                  "translate":  "advancements.needsofnature.natural_curiosity.title"
+                              },
+                    "description":  {
+                                        "translate":  "advancements.needsofnature.natural_curiosity.description"
+                                    },
+                    "frame":  "task",
+                    "show_toast":  true,
+                    "announce_to_chat":  true,
+                    "hidden":  false
+                },
+    "criteria":  {
+                     "done":  {
+                                  "trigger":  "minecraft:impossible"
+                              }
+                 }
+}

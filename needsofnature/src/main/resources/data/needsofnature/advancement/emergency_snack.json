@@ -1,0 +1,23 @@
+{
+    "parent":  "needsofnature:natural_curiosity",
+    "display":  {
+                    "icon":  {
+                                 "id":  "minecraft:honey_bottle"
+                             },
+                    "title":  {
+                                  "translate":  "advancements.needsofnature.emergency_snack.title"
+                              },
+                    "description":  {
+                                        "translate":  "advancements.needsofnature.emergency_snack.description"
+                                    },
+                    "frame":  "task",
+                    "show_toast":  true,
+                    "announce_to_chat":  true,
+                    "hidden":  false
+                },
+    "criteria":  {
+                     "done":  {
+                                  "trigger":  "minecraft:impossible"
+                              }
+                 }
+}

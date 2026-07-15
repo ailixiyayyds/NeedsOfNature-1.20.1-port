@@ -1,0 +1,23 @@
+{
+    "display":  {
+                    "icon":  {
+                                 "id":  "needsofnature:horse_liquid_collector"
+                             },
+                    "title":  {
+                                  "translate":  "advancements.needsofnature.root.title"
+                              },
+                    "description":  {
+                                        "translate":  "advancements.needsofnature.root.description"
+                                    },
+                    "frame":  "task",
+                    "show_toast":  false,
+                    "announce_to_chat":  false,
+                    "hidden":  false,
+                    "background":  "minecraft:block/cherry_planks"
+                },
+    "criteria":  {
+                     "done":  {
+                                  "trigger":  "minecraft:impossible"
+                              }
+                 }
+}

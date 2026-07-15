@@ -1,0 +1,43 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "minecraft:block/barrel_side",
+    "particle": "minecraft:block/barrel_side"
+  },
+  "display": {
+    "thirdperson_righthand": {
+      "translation": [0, -3.25, 0],
+      "scale": [0.6, 0.6, 0.6]
+    },
+    "thirdperson_lefthand": {
+      "translation": [0, -3.5, 0],
+      "scale": [0.6, 0.6, 0.6]
+    },
+    "firstperson_righthand": {
+      "translation": [0, -5, 2.5],
+      "scale": [0.6, 0.6, 0.6]
+    },
+    "firstperson_lefthand": {
+      "translation": [0, -5, 2.5],
+      "scale": [0.6, 0.6, 0.6]
+    },
+    "ground": {
+      "translation": [0, -2, 0],
+      "scale": [0.6, 0.6, 0.6]
+    },
+    "gui": {
+      "rotation": [23, 140, 0],
+      "translation": [0, -6.5, 0],
+      "scale": [0.6, 0.6, 0.6]
+    },
+    "fixed": {
+      "rotation": [0, -90, 0],
+      "translation": [0, -8.25, 0],
+      "scale": [0.6, 0.6, 0.6]
+    },
+    "on_shelf": {
+      "rotation": [0, -180, 0],
+      "translation": [0, -2, 0]
+    }
+  }
+}

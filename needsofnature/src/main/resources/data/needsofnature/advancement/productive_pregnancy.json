@@ -1,0 +1,23 @@
+{
+    "parent":  "needsofnature:first_pregnancy",
+    "display":  {
+                    "icon":  {
+                                 "id":  "minecraft:hay_block"
+                             },
+                    "title":  {
+                                  "translate":  "advancements.needsofnature.productive_pregnancy.title"
+                              },
+                    "description":  {
+                                        "translate":  "advancements.needsofnature.productive_pregnancy.description"
+                                    },
+                    "frame":  "goal",
+                    "show_toast":  true,
+                    "announce_to_chat":  true,
+                    "hidden":  false
+                },
+    "criteria":  {
+                     "done":  {
+                                  "trigger":  "minecraft:impossible"
+                              }
+                 }
+}

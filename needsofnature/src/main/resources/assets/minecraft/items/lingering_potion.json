@@ -1,0 +1,90 @@
+{
+  "model": {
+    "type": "minecraft:select",
+    "property": "minecraft:component",
+    "component": "minecraft:potion_contents",
+    "cases": [
+      {
+        "when": "needsofnature:fertile_nectar",
+        "model": {
+          "type": "minecraft:model",
+          "model": "needsofnature:item/fertile_nectar_lingering_potion"
+        }
+      },
+      {
+        "when": "needsofnature:fertility_increaser",
+        "model": {
+          "type": "minecraft:model",
+          "model": "needsofnature:item/fertility_lingering_potion"
+        }
+      },
+      {
+        "when": "needsofnature:fertility_increaser_ii",
+        "model": {
+          "type": "minecraft:model",
+          "model": "needsofnature:item/fertility_lingering_potion"
+        }
+      },
+      {
+        "when": "needsofnature:fertility_increaser_long",
+        "model": {
+          "type": "minecraft:model",
+          "model": "needsofnature:item/fertility_lingering_potion"
+        }
+      },
+      {
+        "when": "needsofnature:energy",
+        "model": {
+          "type": "minecraft:model",
+          "model": "needsofnature:item/energy_lingering_potion"
+        }
+      },
+      {
+        "when": "needsofnature:energy_ii",
+        "model": {
+          "type": "minecraft:model",
+          "model": "needsofnature:item/energy_lingering_potion"
+        }
+      },
+      {
+        "when": "needsofnature:energy_long",
+        "model": {
+          "type": "minecraft:model",
+          "model": "needsofnature:item/energy_lingering_potion"
+        }
+      },
+      {
+        "when": "needsofnature:energy_relief",
+        "model": {
+          "type": "minecraft:model",
+          "model": "needsofnature:item/energy_relief_lingering_potion"
+        }
+      },
+      {
+        "when": "needsofnature:energy_relief_ii",
+        "model": {
+          "type": "minecraft:model",
+          "model": "needsofnature:item/energy_relief_lingering_potion"
+        }
+      },
+      {
+        "when": "needsofnature:energy_relief_long",
+        "model": {
+          "type": "minecraft:model",
+          "model": "needsofnature:item/energy_relief_lingering_potion"
+        }
+      }
+    ],
+    "fallback": {
+      "type": "minecraft:model",
+      "model": "minecraft:item/lingering_potion",
+      "tints": [
+        {
+          "type": "minecraft:potion",
+          "default": -13083194
+        }
+      ]
+    }
+  }
+}
+

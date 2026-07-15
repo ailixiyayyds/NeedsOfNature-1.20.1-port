@@ -1,0 +1,23 @@
+{
+    "parent":  "needsofnature:filled_to_the_brim",
+    "display":  {
+                    "icon":  {
+                                 "id":  "minecraft:writable_book"
+                             },
+                    "title":  {
+                                  "translate":  "advancements.needsofnature.field_research.title"
+                              },
+                    "description":  {
+                                        "translate":  "advancements.needsofnature.field_research.description"
+                                    },
+                    "frame":  "goal",
+                    "show_toast":  true,
+                    "announce_to_chat":  true,
+                    "hidden":  false
+                },
+    "criteria":  {
+                     "done":  {
+                                  "trigger":  "minecraft:impossible"
+                              }
+                 }
+}

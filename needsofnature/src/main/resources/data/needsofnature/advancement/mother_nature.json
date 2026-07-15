@@ -1,0 +1,23 @@
+{
+    "parent":  "needsofnature:first_pregnancy",
+    "display":  {
+                    "icon":  {
+                                 "id":  "minecraft:turtle_egg"
+                             },
+                    "title":  {
+                                  "translate":  "advancements.needsofnature.mother_nature.title"
+                              },
+                    "description":  {
+                                        "translate":  "advancements.needsofnature.mother_nature.description"
+                                    },
+                    "frame":  "goal",
+                    "show_toast":  true,
+                    "announce_to_chat":  true,
+                    "hidden":  false
+                },
+    "criteria":  {
+                     "done":  {
+                                  "trigger":  "minecraft:impossible"
+                              }
+                 }
+}

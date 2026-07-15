@@ -1,0 +1,23 @@
+{
+    "parent":  "needsofnature:filled_to_the_brim",
+    "display":  {
+                    "icon":  {
+                                 "id":  "minecraft:potion"
+                             },
+                    "title":  {
+                                  "translate":  "advancements.needsofnature.favouritism.title"
+                              },
+                    "description":  {
+                                        "translate":  "advancements.needsofnature.favouritism.description"
+                                    },
+                    "frame":  "challenge",
+                    "show_toast":  true,
+                    "announce_to_chat":  true,
+                    "hidden":  false
+                },
+    "criteria":  {
+                     "done":  {
+                                  "trigger":  "minecraft:impossible"
+                              }
+                 }
+}

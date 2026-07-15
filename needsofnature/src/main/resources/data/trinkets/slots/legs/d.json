@@ -1,0 +1,9 @@
+{
+  "icon": "needsofnature:gui/slots/d",
+  "order": 92,
+  "amount": 1,
+  "validator_predicates": [
+    "trinkets:tag",
+    "needsofnature:male"
+  ]
+}

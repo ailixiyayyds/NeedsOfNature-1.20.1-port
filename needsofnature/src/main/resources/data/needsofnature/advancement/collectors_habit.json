@@ -1,0 +1,23 @@
+{
+    "parent":  "needsofnature:filled_to_the_brim",
+    "display":  {
+                    "icon":  {
+                                 "id":  "minecraft:glass_bottle"
+                             },
+                    "title":  {
+                                  "translate":  "advancements.needsofnature.collectors_habit.title"
+                              },
+                    "description":  {
+                                        "translate":  "advancements.needsofnature.collectors_habit.description"
+                                    },
+                    "frame":  "goal",
+                    "show_toast":  true,
+                    "announce_to_chat":  true,
+                    "hidden":  false
+                },
+    "criteria":  {
+                     "done":  {
+                                  "trigger":  "minecraft:impossible"
+                              }
+                 }
+}

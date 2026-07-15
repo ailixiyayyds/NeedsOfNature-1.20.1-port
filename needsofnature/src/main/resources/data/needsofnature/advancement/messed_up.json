@@ -1,0 +1,23 @@
+{
+    "parent":  "needsofnature:natural_curiosity",
+    "display":  {
+                    "icon":  {
+                                 "id":  "minecraft:sponge"
+                             },
+                    "title":  {
+                                  "translate":  "advancements.needsofnature.messed_up.title"
+                              },
+                    "description":  {
+                                        "translate":  "advancements.needsofnature.messed_up.description"
+                                    },
+                    "frame":  "goal",
+                    "show_toast":  true,
+                    "announce_to_chat":  true,
+                    "hidden":  false
+                },
+    "criteria":  {
+                     "done":  {
+                                  "trigger":  "minecraft:impossible"
+                              }
+                 }
+}

@@ -1,0 +1,23 @@
+{
+    "parent":  "needsofnature:natural_curiosity",
+    "display":  {
+                    "icon":  {
+                                 "id":  "minecraft:lead"
+                             },
+                    "title":  {
+                                  "translate":  "advancements.needsofnature.group_activity.title"
+                              },
+                    "description":  {
+                                        "translate":  "advancements.needsofnature.group_activity.description"
+                                    },
+                    "frame":  "goal",
+                    "show_toast":  true,
+                    "announce_to_chat":  true,
+                    "hidden":  false
+                },
+    "criteria":  {
+                     "done":  {
+                                  "trigger":  "minecraft:impossible"
+                              }
+                 }
+}

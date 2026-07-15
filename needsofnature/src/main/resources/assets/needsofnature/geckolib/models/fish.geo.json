@@ -1,0 +1,92 @@
+{
+  "format_version": "1.12.0",
+  "minecraft:geometry": [
+    {
+      "description": {
+        "identifier": "geometry.unknown",
+        "texture_width": 32,
+        "texture_height": 32,
+        "visible_bounds_width": 3,
+        "visible_bounds_height": 2.5,
+        "visible_bounds_offset": [0, 0.75, 0]
+      },
+      "bones": [
+        {
+          "name": "fish",
+          "pivot": [0, 7.5, 0]
+        },
+        {
+          "name": "head",
+          "parent": "fish",
+          "pivot": [0, 7.5, -8],
+          "cubes": [
+            {"origin": [-1, 5.5, -11], "size": [2, 4, 3], "uv": [22, 0]}
+          ]
+        },
+        {
+          "name": "bone",
+          "parent": "head",
+          "pivot": [0, 7.5, -8]
+        },
+        {
+          "name": "body_front",
+          "parent": "fish",
+          "pivot": [0, 7.5, -8],
+          "cubes": [
+            {"origin": [-1.5, 5, -8], "size": [3, 5, 8], "uv": [0, 0]}
+          ]
+        },
+        {
+          "name": "body_back",
+          "parent": "fish",
+          "pivot": [0, 7.5, 0],
+          "cubes": [
+            {"origin": [-1.5, 5, 0], "size": [3, 5, 8], "uv": [0, 13]}
+          ]
+        },
+        {
+          "name": "fin_left",
+          "parent": "fish",
+          "pivot": [1.5, 6, -8],
+          "rotation": [0, 0, 45],
+          "cubes": [
+            {"origin": [1.5, 6, -8], "size": [2, 0, 2], "uv": [0, 0]}
+          ]
+        },
+        {
+          "name": "fin_right",
+          "parent": "fish",
+          "pivot": [-1.5, 6, -8],
+          "rotation": [0, 0, -45],
+          "cubes": [
+            {"origin": [-3.5, 6, -8], "size": [2, 0, 2], "uv": [-4, 0]}
+          ]
+        },
+        {
+          "name": "fin_back_1",
+          "parent": "fish",
+          "pivot": [0, 12, -3],
+          "cubes": [
+            {"origin": [0, 10, -3], "size": [0, 2, 3], "uv": [2, 1]}
+          ]
+        },
+        {
+          "name": "fin_back_2",
+          "parent": "fish",
+          "pivot": [0, 12, -1],
+          "cubes": [
+            {"origin": [0, 10, -1], "size": [0, 2, 4], "uv": [0, 2]}
+          ]
+        },
+        {
+          "name": "tail",
+          "parent": "fish",
+          "pivot": [0, 7.5, 8],
+          "cubes": [
+            {"origin": [0, 5, 8], "size": [0, 5, 6], "uv": [20, 10]}
+          ]
+        }
+      ]
+    }
+  ]
+}

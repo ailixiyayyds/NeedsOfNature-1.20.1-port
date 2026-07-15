@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "WLL",
+    "LPC",
+    " S "
+  ],
+  "key": {
+    "W": "minecraft:wheat",
+    "L": "minecraft:leather",
+    "P": "#minecraft:planks",
+    "C": "minecraft:cauldron",
+    "S": "minecraft:smooth_stone_slab"
+  },
+  "result": {
+    "id": "needsofnature:horse_liquid_collector"
+  }
+}

@@ -1,0 +1,23 @@
+{
+    "parent":  "needsofnature:natural_curiosity",
+    "display":  {
+                    "icon":  {
+                                 "id":  "minecraft:beacon"
+                             },
+                    "title":  {
+                                  "translate":  "advancements.needsofnature.bad_idea_beacon.title"
+                              },
+                    "description":  {
+                                        "translate":  "advancements.needsofnature.bad_idea_beacon.description"
+                                    },
+                    "frame":  "goal",
+                    "show_toast":  true,
+                    "announce_to_chat":  true,
+                    "hidden":  false
+                },
+    "criteria":  {
+                     "done":  {
+                                  "trigger":  "minecraft:impossible"
+                              }
+                 }
+}

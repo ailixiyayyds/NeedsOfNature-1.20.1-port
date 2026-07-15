@@ -1,0 +1,10 @@
+{
+  "model": {
+    "type": "minecraft:special",
+    "base": "needsofnature:item/horse_liquid_collector",
+    "model": {
+      "type": "geckolib:geckolib"
+    }
+  },
+  "hand_animation_on_swap": false
+}

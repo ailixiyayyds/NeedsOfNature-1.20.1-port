@@ -1,0 +1,23 @@
+{
+    "parent":  "needsofnature:emergency_snack",
+    "display":  {
+                    "icon":  {
+                                 "id":  "minecraft:honey_bottle"
+                             },
+                    "title":  {
+                                  "translate":  "advancements.needsofnature.stable_diet.title"
+                              },
+                    "description":  {
+                                        "translate":  "advancements.needsofnature.stable_diet.description"
+                                    },
+                    "frame":  "goal",
+                    "show_toast":  true,
+                    "announce_to_chat":  true,
+                    "hidden":  false
+                },
+    "criteria":  {
+                     "done":  {
+                                  "trigger":  "minecraft:impossible"
+                              }
+                 }
+}

@@ -1,0 +1,23 @@
+{
+    "parent": "needsofnature:first_pregnancy",
+    "display": {
+        "icon": {
+            "id": "minecraft:milk_bucket"
+        },
+        "title": {
+            "translate": "advancements.needsofnature.udderly_unfortunate.title"
+        },
+        "description": {
+            "translate": "advancements.needsofnature.udderly_unfortunate.description"
+        },
+        "frame": "task",
+        "show_toast": true,
+        "announce_to_chat": true,
+        "hidden": false
+    },
+    "criteria": {
+        "done": {
+            "trigger": "minecraft:impossible"
+        }
+    }
+}

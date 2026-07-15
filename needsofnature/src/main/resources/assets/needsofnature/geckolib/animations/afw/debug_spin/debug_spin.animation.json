@@ -1,0 +1,20 @@
+{
+  "animations": {
+    "animation": {
+      "loop": true,
+      "animation_length": 1,
+      "bones": {
+        "fish": {
+          "rotation": {
+            "0.0": {
+              "vector": [0, 0, 0]
+            },
+            "1.0": {
+              "vector": [0, 360, 0]
+            }
+          }
+        }
+      }
+    }
+  }
+}

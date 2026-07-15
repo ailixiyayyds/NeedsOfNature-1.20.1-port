@@ -1,0 +1,205 @@
+{
+  "funkytown": {
+    "sounds": [
+      {
+        "name": "needsofnature:funkytown",
+        "stream": true
+      }
+    ]
+  },
+  "rip01": {
+    "sounds": ["needsofnature:rip01"]
+  },
+  "rip02": {
+    "sounds": ["needsofnature:rip02"]
+  },
+  "rip03": {
+    "sounds": ["needsofnature:rip03"]
+  },
+  "shot_in01": {
+    "sounds": ["needsofnature:actionsounds/shots/shot_in01"]
+  },
+  "pop": {
+    "sounds": ["needsofnature:pop"]
+  },
+  "shot_in02": {
+    "sounds": ["needsofnature:actionsounds/shots/shot_in02"]
+  },
+  "shot_in03": {
+    "sounds": ["needsofnature:actionsounds/shots/shot_in03"]
+  },
+  "shot_out01": {
+    "sounds": ["needsofnature:actionsounds/shots/shot_out01"]
+  },
+  "shot_out02": {
+    "sounds": ["needsofnature:actionsounds/shots/shot_out02"]
+  },
+  "shot_out03": {
+    "sounds": ["needsofnature:actionsounds/shots/shot_out03"]
+  },
+  "shot_out04": {
+    "sounds": ["needsofnature:actionsounds/shots/shot_out04"]
+  },
+  "shot_out05": {
+    "sounds": ["needsofnature:actionsounds/shots/shot_out05"]
+  },
+  "shot_out06": {
+    "sounds": ["needsofnature:actionsounds/shots/shot_out06"]
+  },
+  "motion01": {
+    "sounds": ["needsofnature:actionsounds/motions/motion01"]
+  },
+  "motion02": {
+    "sounds": ["needsofnature:actionsounds/motions/motion02"]
+  },
+  "motion03": {
+    "sounds": ["needsofnature:actionsounds/motions/motion03"]
+  },
+  "motion04": {
+    "sounds": ["needsofnature:actionsounds/motions/motion04"]
+  },
+  "motion05": {
+    "sounds": ["needsofnature:actionsounds/motions/motion05"]
+  },
+  "motion06": {
+    "sounds": ["needsofnature:actionsounds/motions/motion06"]
+  },
+  "motion07": {
+    "sounds": ["needsofnature:actionsounds/motions/motion07"]
+  },
+  "motion08": {
+    "sounds": ["needsofnature:actionsounds/motions/motion08"]
+  },
+  "motion09": {
+    "sounds": ["needsofnature:actionsounds/motions/motion09"]
+  },
+  "motion10": {
+    "sounds": ["needsofnature:actionsounds/motions/motion10"]
+  },
+  "retract01": {
+    "sounds": ["needsofnature:actionsounds/retract/retract01"]
+  },
+  "retract02": {
+    "sounds": ["needsofnature:actionsounds/retract/retract02"]
+  },
+  "retract03": {
+    "sounds": ["needsofnature:actionsounds/retract/retract03"]
+  },
+  "impactdry01": {
+    "sounds": ["needsofnature:actionsounds/dryimpacts/impactdry01"]
+  },
+  "impactdry02": {
+    "sounds": ["needsofnature:actionsounds/dryimpacts/impactdry02"]
+  },
+  "impactdry03": {
+    "sounds": ["needsofnature:actionsounds/dryimpacts/impactdry03"]
+  },
+  "impactdry04": {
+    "sounds": ["needsofnature:actionsounds/dryimpacts/impactdry04"]
+  },
+  "impactdry05": {
+    "sounds": ["needsofnature:actionsounds/dryimpacts/impactdry05"]
+  },
+  "impactdry06": {
+    "sounds": ["needsofnature:actionsounds/dryimpacts/impactdry06"]
+  },
+  "impactdry07": {
+    "sounds": ["needsofnature:actionsounds/dryimpacts/impactdry07"]
+  },
+  "impactdry08": {
+    "sounds": ["needsofnature:actionsounds/dryimpacts/impactdry08"]
+  },
+  "impactdry09": {
+    "sounds": ["needsofnature:actionsounds/dryimpacts/impactdry09"]
+  },
+  "impactdry10": {
+    "sounds": ["needsofnature:actionsounds/dryimpacts/impactdry10"]
+  },
+  "impactdry11": {
+    "sounds": ["needsofnature:actionsounds/dryimpacts/impactdry11"]
+  },
+  "impactwet01": {
+    "sounds": ["needsofnature:actionsounds/wetimpacts/impactwet01"]
+  },
+  "impactwet02": {
+    "sounds": ["needsofnature:actionsounds/wetimpacts/impactwet02"]
+  },
+  "impactwet03": {
+    "sounds": ["needsofnature:actionsounds/wetimpacts/impactwet03"]
+  },
+  "impactwet04": {
+    "sounds": ["needsofnature:actionsounds/wetimpacts/impactwet04"]
+  },
+  "impactwet05": {
+    "sounds": ["needsofnature:actionsounds/wetimpacts/impactwet05"]
+  },
+  "impactwet06": {
+    "sounds": ["needsofnature:actionsounds/wetimpacts/impactwet06"]
+  },
+  "impactwet07": {
+    "sounds": ["needsofnature:actionsounds/wetimpacts/impactwet07"]
+  },
+  "impactwet08": {
+    "sounds": ["needsofnature:actionsounds/wetimpacts/impactwet08"]
+  },
+  "impactwet09": {
+    "sounds": ["needsofnature:actionsounds/wetimpacts/impactwet09"]
+  },
+  "impactwet10": {
+    "sounds": ["needsofnature:actionsounds/wetimpacts/impactwet10"]
+  },
+  "impactwet11": {
+    "sounds": ["needsofnature:actionsounds/wetimpacts/impactwet11"]
+  },
+  "impactwet12": {
+    "sounds": ["needsofnature:actionsounds/wetimpacts/impactwet12"]
+  },
+  "impactwet13": {
+    "sounds": ["needsofnature:actionsounds/wetimpacts/impactwet13"]
+  },
+  "impactwet14": {
+    "sounds": ["needsofnature:actionsounds/wetimpacts/impactwet14"]
+  },
+  "impactwet15": {
+    "sounds": ["needsofnature:actionsounds/wetimpacts/impactwet15"]
+  },
+  "impactwet16": {
+    "sounds": ["needsofnature:actionsounds/wetimpacts/impactwet16"]
+  },
+  "wet01": {
+    "sounds": ["needsofnature:actionsounds/wet/wet01"]
+  },
+  "wet02": {
+    "sounds": ["needsofnature:actionsounds/wet/wet02"]
+  },
+  "wet03": {
+    "sounds": ["needsofnature:actionsounds/wet/wet03"]
+  },
+  "wet04": {
+    "sounds": ["needsofnature:actionsounds/wet/wet04"]
+  },
+  "wet05": {
+    "sounds": ["needsofnature:actionsounds/wet/wet05"]
+  },
+  "wet06": {
+    "sounds": ["needsofnature:actionsounds/wet/wet06"]
+  },
+  "wet07": {
+    "sounds": ["needsofnature:actionsounds/wet/wet07"]
+  },
+  "wet08": {
+    "sounds": ["needsofnature:actionsounds/wet/wet08"]
+  },
+  "wet09": {
+    "sounds": ["needsofnature:actionsounds/wet/wet09"]
+  },
+  "wet10": {
+    "sounds": ["needsofnature:actionsounds/wet/wet10"]
+  },
+  "wet11": {
+    "sounds": ["needsofnature:actionsounds/wet/wet11"]
+  },
+  "wet12": {
+    "sounds": ["needsofnature:actionsounds/wet/wet12"]
+  }
+}

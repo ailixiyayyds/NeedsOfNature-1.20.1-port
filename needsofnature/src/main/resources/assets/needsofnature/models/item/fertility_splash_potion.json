@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "needsofnature:item/fertility_potion_overlay",
+    "layer1": "minecraft:item/splash_potion"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    "#minecraft:small_flowers",
+    "#minecraft:small_flowers",
+    "#minecraft:small_flowers"
+  ],
+  "result": {
+    "id": "needsofnature:flower_mix",
+    "count": 1
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "entities": [
+    "minecraft:player"
+  ],
+  "slots": [
+    "legs/v",
+    "legs/a",
+    "legs/d"
+  ]
+}
