@@ -58,34 +58,37 @@ public final class AfwBoneTextureOverrides {
         if (modelId == null) {
             return null;
         }
-        return BONE_TEXTURES_BY_MODEL.get(modelId);
+        return BONE_TEXTURES_BY_MODEL.get(AfwBoneTextureOverrides.logicalModelId(modelId));
     }
 
     public static List<Identifier> getEmissiveTextures(Identifier modelId) {
         if (modelId == null) {
             return null;
         }
-        return EMISSIVE_TEXTURES_BY_MODEL.get(modelId);
+        return EMISSIVE_TEXTURES_BY_MODEL.get(AfwBoneTextureOverrides.logicalModelId(modelId));
     }
 
     public static Map<String, ModelLocator> getLocators(Identifier modelId) {
         if (modelId == null) {
             return null;
         }
-        return LOCATORS_BY_MODEL.get(modelId);
+        return LOCATORS_BY_MODEL.get(AfwBoneTextureOverrides.logicalModelId(modelId));
     }
 
     public static boolean isTranslucent(Identifier modelId) {
         if (modelId == null) {
             return false;
         }
-        RenderSettings settings = RENDER_SETTINGS_BY_MODEL.get(modelId);
+        RenderSettings settings = RENDER_SETTINGS_BY_MODEL.get(AfwBoneTextureOverrides.logicalModelId(modelId));
         return settings != null && settings.translucent();
     }
 
     private static void reload(ResourceManager manager) {
-        Map<Identifier, Resource> resources = manager.findResources(
-                "geo", id -> id.getPath().endsWith(".geo.json"));
+        LinkedHashMap<Identifier, Resource> resources = new LinkedHashMap<>();
+        resources.putAll(manager.findResources(
+                "geckolib/models", id -> id.getPath().endsWith(".geo.json")));
+        resources.putAll(manager.findResources(
+                "geo", id -> id.getPath().endsWith(".geo.json")));
         ArrayList<Map.Entry<Identifier, Resource>> entries = new ArrayList<>(resources.entrySet());
         entries.sort(Comparator.comparing(e -> e.getKey().toString()));
         LinkedHashMap<Identifier, Map<String, Identifier>> loaded = new LinkedHashMap<Identifier, Map<String, Identifier>>();
@@ -263,13 +266,25 @@ public final class AfwBoneTextureOverrides {
 
     private static Identifier modelIdFromGeoPath(Identifier fileId) {
         String path = fileId.getPath();
-        String prefix = "geckolib/models/";
         String suffix = ".geo.json";
-        if (!path.startsWith(prefix) || !path.endsWith(suffix)) {
+        String prefix;
+        if (path.startsWith("geckolib/models/")) {
+            prefix = "geckolib/models/";
+        } else if (path.startsWith("geo/")) {
+            prefix = "geo/";
+        } else {
+            return null;
+        }
+        if (!path.endsWith(suffix)) {
             return null;
         }
         String modelPath = path.substring(prefix.length(), path.length() - suffix.length());
         return new Identifier((String)fileId.getNamespace(), (String)modelPath);
+    }
+
+    private static Identifier logicalModelId(Identifier modelId) {
+        Identifier logical = AfwBoneTextureOverrides.modelIdFromGeoPath(modelId);
+        return logical != null ? logical : modelId;
     }
 
     private static void setupWarn(String template, Object ... args) {

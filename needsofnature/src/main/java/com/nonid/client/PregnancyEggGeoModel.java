@@ -24,9 +24,9 @@ import software.bernie.geckolib.model.GeoModel;
 
 public final class PregnancyEggGeoModel
 extends GeoModel<PregnancyEggEntity> {
-    public static final Identifier DEFAULT_MODEL_ID = new Identifier("needsofnature", "entity/pregnancy_egg/default");
+    public static final Identifier DEFAULT_MODEL_ID = new Identifier("needsofnature", "geo/entity/pregnancy_egg/default.geo.json");
     public static final Identifier DEFAULT_TEXTURE_ID = new Identifier("needsofnature", "textures/entity/pregnancy_egg/default.png");
-    private static final Identifier PLACEHOLDER_ANIMATION_ID = new Identifier("animationframework", "afw/placeholder");
+    private static final Identifier PLACEHOLDER_ANIMATION_ID = new Identifier("animationframework", "animations/afw/placeholder.animation.json");
     private static final Map<Identifier, Boolean> TEXTURE_EXISTS_CACHE = new ConcurrentHashMap<Identifier, Boolean>();
 
     public Identifier getModelResource(PregnancyEggEntity animatable) {
@@ -58,7 +58,7 @@ extends GeoModel<PregnancyEggEntity> {
         if (targetType == null) {
             return null;
         }
-        return new Identifier("needsofnature", "entity/pregnancy_egg/" + PregnancyEggGeoModel.toFileStem(targetType));
+        return new Identifier("needsofnature", "geo/entity/pregnancy_egg/" + PregnancyEggGeoModel.toFileStem(targetType) + ".geo.json");
     }
 
     private static Identifier resolveSpecificTextureId(PregnancyEggEntity animatable) {

@@ -16,10 +16,10 @@ import software.bernie.geckolib.model.GeoModel;
 
 public class HorseLiquidCollectorGeoModel
 extends GeoModel<HorseLiquidCollectorEntity> {
-    public static final Identifier MODEL_ID = new Identifier("needsofnature", "entity/horse_liquid_collector");
+    public static final Identifier MODEL_ID = new Identifier("needsofnature", "geo/entity/horse_liquid_collector.geo.json");
     public static final Identifier EMPTY_TEXTURE_ID = new Identifier("needsofnature", "textures/entity/horse_liquid_collector/horse_liquid_collector_empty.png");
     public static final Identifier FULL_TEXTURE_ID = new Identifier("needsofnature", "textures/entity/horse_liquid_collector/horse_liquid_collector_full.png");
-    private static final Identifier PLACEHOLDER_ANIMATION_ID = new Identifier("animationframework", "afw/placeholder");
+    private static final Identifier PLACEHOLDER_ANIMATION_ID = new Identifier("animationframework", "animations/afw/placeholder.animation.json");
 
     public Identifier getModelResource(HorseLiquidCollectorEntity animatable) {
         return MODEL_ID;

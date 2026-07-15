@@ -162,12 +162,15 @@ public final class AfwGeckoReplacedRender {
             }
         }
 
-        if (model == null || !AfwGeckoResourceResolver.hasGeoModel(model)) {
+        Identifier resolvedModelResource = AfwGeckoResourceResolver.resolveGeoModelResource(model);
+        if (resolvedModelResource == null) {
             AfwGeckoResourceResolver.ModelAndTexture missing =
                     AfwGeckoResourceResolver.missingModelFallback(entityTypeId);
             model = missing.model();
             texture = missing.texture();
             explicitTexture = true;
+        } else {
+            model = resolvedModelResource;
         }
 
         if (!explicitTexture) {

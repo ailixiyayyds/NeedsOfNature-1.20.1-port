@@ -16,7 +16,7 @@ import software.bernie.geckolib.model.GeoModel;
 
 public class HorseLiquidCollectorItemGeoModel
 extends GeoModel<HorseLiquidCollectorItem> {
-    private static final Identifier PLACEHOLDER_ANIMATION_ID = new Identifier("animationframework", "afw/placeholder");
+    private static final Identifier PLACEHOLDER_ANIMATION_ID = new Identifier("animationframework", "animations/afw/placeholder.animation.json");
 
     public Identifier getModelResource(HorseLiquidCollectorItem animatable) {
         return HorseLiquidCollectorGeoModel.MODEL_ID;

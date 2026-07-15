@@ -106,13 +106,16 @@ public final class AfwGeckoResourceResolver {
             return AfwGeckoResourceResolver.missingWithLog(null);
         }
         String entityPath = entityTypeId.getPath();
-        Identifier primaryModel = AfwGeckoResourceResolver.geoModelPath(new Identifier((String)"animationframework", (String)("entity/" + entityPath)));
-        Identifier secondaryModel = AfwGeckoResourceResolver.geoModelPath(new Identifier((String)"animationframework", (String)entityPath));
-        Identifier resolvedModel = primaryModel;
-        boolean hasModel = AfwGeckoResourceResolver.hasGeoModel(primaryModel);
-        if (!hasModel && AfwGeckoResourceResolver.hasGeoModel(secondaryModel)) {
-            resolvedModel = secondaryModel;
-            hasModel = true;
+        Identifier primaryModel = new Identifier((String)"animationframework", (String)("entity/" + entityPath));
+        Identifier secondaryModel = new Identifier((String)"animationframework", (String)entityPath);
+        Identifier resolvedModel = AfwGeckoResourceResolver.resolveGeoModelResource(primaryModel);
+        boolean hasModel = resolvedModel != null;
+        if (!hasModel) {
+            resolvedModel = AfwGeckoResourceResolver.resolveGeoModelResource(secondaryModel);
+            hasModel = resolvedModel != null;
+        }
+        if (resolvedModel == null) {
+            resolvedModel = AfwGeckoResourceResolver.geoModelPath(primaryModel);
         }
         Identifier resolvedTexture = AfwGeckoResourceResolver.resourceExists(derivedTexture = new Identifier((String)entityTypeId.getNamespace(), (String)("textures/entity/" + entityPath + "/" + entityPath + ".png"))) ? derivedTexture : DEFAULT_MISSING_TEXTURE;
         return new ModelAndTexture(resolvedModel, resolvedTexture, !hasModel);
@@ -123,15 +126,28 @@ public final class AfwGeckoResourceResolver {
     }
 
     public static boolean hasGeoModel(Identifier modelId) {
+        return AfwGeckoResourceResolver.resolveGeoModelResource(modelId) != null;
+    }
+
+    /** Converts GeckoLib 5 logical model IDs to the complete paths required by GeckoLib 4. */
+    public static Identifier resolveGeoModelResource(Identifier modelId) {
         if (modelId == null) {
-            return false;
+            return null;
         }
-        if (GeckoLibCache.getBakedModels().containsKey(modelId)) {
-            return true;
+        if (GeckoLibCache.getBakedModels().containsKey(modelId)
+                || AfwGeckoResourceResolver.resourceExists(modelId)) {
+            return modelId;
         }
-        Identifier geoPath = AfwGeckoResourceResolver.geoModelPath(modelId);
-        return GeckoLibCache.getBakedModels().containsKey(geoPath)
-                || AfwGeckoResourceResolver.resourceExists(geoPath);
+        String path = modelId.getPath();
+        if (AfwGeckoResourceResolver.isCompleteModelPath(path)) {
+            return null;
+        }
+        Identifier legacyPath = AfwGeckoResourceResolver.geoModelPath(modelId);
+        if (GeckoLibCache.getBakedModels().containsKey(legacyPath)
+                || AfwGeckoResourceResolver.resourceExists(legacyPath)) {
+            return legacyPath;
+        }
+        return null;
     }
 
     private static String nestedAnimationPath(String animationPath, String suffix) {
@@ -158,10 +174,15 @@ public final class AfwGeckoResourceResolver {
 
     private static Identifier geoModelPath(Identifier modelId) {
         String path = modelId.getPath();
-        if (path.startsWith("geo/") && path.endsWith(".geo.json")) {
+        if (AfwGeckoResourceResolver.isCompleteModelPath(path)) {
             return modelId;
         }
         return new Identifier((String)modelId.getNamespace(), (String)("geo/" + path + ".geo.json"));
+    }
+
+    private static boolean isCompleteModelPath(String path) {
+        return path != null && path.endsWith(".geo.json")
+                && path.startsWith("geo/");
     }
 
     private static boolean resourceExists(Identifier resourceId) {

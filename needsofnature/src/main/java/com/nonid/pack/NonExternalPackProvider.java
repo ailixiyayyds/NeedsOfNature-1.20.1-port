@@ -170,10 +170,7 @@ implements ResourcePackProvider {
 
     private static ResourcePackProfile.PackFactory createPackFactory(NonPackRootResolver.ResolvedRoot root) {
         if (root.isZip()) {
-            if (root.isNested()) {
-                return new NonPrefixedZipResourcePack.Factory(root.sourcePath(), root.zipPrefix());
-            }
-            return name -> new ZipResourcePack(name, root.sourcePath().toFile(), false);
+            return new NonPrefixedZipResourcePack.Factory(root.sourcePath(), root.zipPrefix());
         }
         return name -> new DirectoryResourcePack(name, root.rootPath(), false);
     }

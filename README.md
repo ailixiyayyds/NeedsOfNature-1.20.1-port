@@ -19,7 +19,7 @@
 - Forge 47.4.21 + Connector beta.49 已能启动、加载默认包、进入世界并同步网络状态。
 - 已内置简体中文：NeedsOfNature 681 个语言键，Animation Director 102 个语言键。
 - 已修复 Forge/Connector 下的 GeckoLib 渲染、资源包集合、Mixin 描述符和物品渲染兼容问题。
-- 最新修复为“模型未配置发光贴图时玩家替换渲染空指针”；已通过构建，仍建议协作者重点复测实际动画渲染。
+- 最新修复已兼容原版内容包使用的 GeckoLib 5 资源目录：在 GeckoLib 4 下自动把 `geckolib/models`、`geckolib/animations` 映射为 `geo`、`animations`。这修复了按 `M` 后动画缺失/红色占位模型，以及放置马用液体收集器时因模型未找到导致的崩溃。
 
 详细历史见 [PORTING_STATUS.md](PORTING_STATUS.md)，协作约定见 [docs/DEVELOPMENT_ZH.md](docs/DEVELOPMENT_ZH.md)，玩法说明见 [docs/GAMEPLAY_ZH.md](docs/GAMEPLAY_ZH.md)。
 

@@ -101,6 +101,8 @@ needsofnature/src/main/resources/assets/needsofnature/lang/
 - 保持 Forge 资源包 Provider 集合可变。
 - 将可选 debug-spin Mixin 改为非强制。
 - 修复未定义发光贴图时 `getEmissiveTextures(model) == null` 导致的玩家替换渲染崩溃。
+- 外部 ZIP 内容包现在提供 GeckoLib 5 → GeckoLib 4 虚拟路径兼容：`geckolib/models/**` 作为 `geo/**` 暴露，`geckolib/animations/**` 作为 `animations/**` 暴露。
+- AFW 动画解析器统一返回 GeckoLib 4 实际缓存键；马用液体收集器内置模型同时提供 `geo/entity/horse_liquid_collector.geo.json`，避免实体创建后渲染阶段崩溃。
 
 ## 9. 提交前检查
 
@@ -126,4 +128,3 @@ needsofnature/src/main/resources/assets/needsofnature/lang/
 - PCL 启动脚本、访问令牌、账号信息；
 - 存档、崩溃报告和个人配置；
 - 大型临时编译日志。
-
