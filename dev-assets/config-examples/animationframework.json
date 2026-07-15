@@ -1,0 +1,9 @@
+{
+  "forceVanillaEntityTextures": false,
+  "debugChatMode": "SETUP_ERRORS",
+  "debugDamageBehavior": "STOP_ON_DAMAGE",
+  "debugIgnoreAttackers": false,
+  "anchorAtLastSelected": false,
+  "blockSearchRadius": 3,
+  "autoSwitchThirdPersonOnAnimationStart": true
+}

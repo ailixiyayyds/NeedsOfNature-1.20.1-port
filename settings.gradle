@@ -1,0 +1,10 @@
+pluginManagement {
+    repositories {
+        maven { url = 'https://maven.fabricmc.net/' }
+        mavenCentral()
+        gradlePluginPortal()
+    }
+}
+
+rootProject.name = 'NeedsOfNature-1.20.1-port'
+include 'animationdirector', 'needsofnature'

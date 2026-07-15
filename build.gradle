@@ -1,0 +1,69 @@
+plugins {
+    id 'net.fabricmc.fabric-loom-remap' version "${loom_version}" apply false
+}
+
+subprojects {
+    apply plugin: 'net.fabricmc.fabric-loom-remap'
+
+    version = rootProject.mod_version
+    group = rootProject.maven_group
+
+    base {
+        archivesName = "${project.name}-1.20.1"
+    }
+
+    repositories {
+        mavenCentral()
+        maven { url = 'https://maven.fabricmc.net/' }
+        maven { url = 'https://maven.terraformersmc.com/releases/' }
+        maven { url = 'https://maven.ladysnake.org/releases' }
+        maven { url = 'https://dl.cloudsmith.io/public/geckolib3/geckolib/maven/' }
+    }
+
+    dependencies {
+        minecraft "com.mojang:minecraft:${rootProject.minecraft_version}"
+        mappings "net.fabricmc:yarn:${rootProject.yarn_mappings}:v2"
+        modImplementation "net.fabricmc:fabric-loader:${rootProject.loader_version}"
+        modImplementation "net.fabricmc.fabric-api:fabric-api:${rootProject.fabric_api_version}"
+        modImplementation "software.bernie.geckolib:geckolib-fabric-1.20.1:${rootProject.geckolib_version}"
+    }
+
+    processResources {
+        inputs.property 'version', project.version
+        filesMatching('fabric.mod.json') {
+            expand(version: project.version)
+        }
+    }
+
+    tasks.withType(JavaCompile).configureEach {
+        options.release = 17
+        options.encoding = 'UTF-8'
+        options.compilerArgs += ['-Xmaxerrs', '2000']
+    }
+
+    java {
+        withSourcesJar()
+        sourceCompatibility = JavaVersion.VERSION_17
+        targetCompatibility = JavaVersion.VERSION_17
+    }
+}
+
+project(':animationdirector') {
+    sourceSets {
+        main.java.exclude 'com/afwid/integration/AfwModMenuIntegration.java'
+    }
+}
+
+project(':needsofnature') {
+    sourceSets {
+        main.java.exclude 'com/nonid/integration/NonModMenuIntegration.java'
+    }
+    dependencies {
+        implementation project(':animationdirector')
+        modCompileOnly "dev.emi:trinkets:${rootProject.trinkets_version}"
+        modCompileOnly "dev.onyxstudios.cardinal-components-api:cardinal-components-base:5.2.0"
+        modCompileOnly "dev.onyxstudios.cardinal-components-api:cardinal-components-entity:5.2.0"
+        compileOnly "io.github.blackspherefollower:buttplug4j:4.0.278"
+        compileOnly "io.github.blackspherefollower:buttplug4j.connectors.jetty.websocket.client:4.0.278"
+    }
+}

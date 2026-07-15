@@ -1,0 +1,17 @@
+.gradle/
+build/
+*/build/
+run/
+*.log
+libs/
+.idea/
+.vscode/
+*.iml
+crash-reports/
+saves/
+
+# Local reverse-engineering binaries and downloaded reference projects.
+# Keep the scripts in tools/, but do not commit third-party binaries/caches.
+tools/*.jar
+tools/yarn-*/
+tools/fabric-example-*/
