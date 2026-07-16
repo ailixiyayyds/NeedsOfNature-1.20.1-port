@@ -54,14 +54,8 @@ extends AbstractFileResourcePack {
         if (type == null || id == null) {
             return null;
         }
-        String base = this.rootPrefix + type.getDirectory() + "/" + id.getNamespace() + "/";
-        ZipEntry entry = this.zipFile.getEntry(base + id.getPath());
-        if (entry == null && type == ResourceType.CLIENT_RESOURCES) {
-            String compatibilityPath = NonPrefixedZipResourcePack.toGeckoLib5Path(id.getPath());
-            if (compatibilityPath != null) {
-                entry = this.zipFile.getEntry(base + compatibilityPath);
-            }
-        }
+        String path = this.rootPrefix + type.getDirectory() + "/" + id.getNamespace() + "/" + id.getPath();
+        ZipEntry entry = this.zipFile.getEntry(path);
         return entry == null || entry.isDirectory() ? null : InputSupplier.create((ZipFile)this.zipFile, (ZipEntry)entry);
     }
 
@@ -70,7 +64,6 @@ extends AbstractFileResourcePack {
             return;
         }
         String scanPrefix = this.rootPrefix + type.getDirectory() + "/" + namespace + "/" + prefix;
-        Set<Identifier> emitted = new LinkedHashSet<>();
         Enumeration<? extends ZipEntry> entries = this.zipFile.entries();
         while (entries.hasMoreElements()) {
             Identifier id;
@@ -78,32 +71,7 @@ extends AbstractFileResourcePack {
             String normalized;
             ZipEntry entry = entries.nextElement();
             if (entry == null || entry.isDirectory() || (normalized = NonPackRootResolver.normalizeZipEntryName(entry.getName())) == null || !normalized.startsWith(scanPrefix) || (idPath = normalized.substring((this.rootPrefix + type.getDirectory() + "/" + namespace + "/").length())).isBlank() || (id = Identifier.tryParse(namespace + ":" + idPath)) == null) continue;
-            if (emitted.add(id)) {
-                consumer.accept(id, InputSupplier.create(this.zipFile, entry));
-            }
-        }
-        if (type == ResourceType.CLIENT_RESOURCES) {
-            String compatibilityPrefix = NonPrefixedZipResourcePack.toGeckoLib5Path(prefix);
-            if (compatibilityPrefix != null) {
-                String compatibilityScanPrefix = this.rootPrefix + type.getDirectory() + "/" + namespace + "/" + compatibilityPrefix;
-                entries = this.zipFile.entries();
-                while (entries.hasMoreElements()) {
-                    ZipEntry entry = entries.nextElement();
-                    String normalized;
-                    if (entry == null || entry.isDirectory()
-                            || (normalized = NonPackRootResolver.normalizeZipEntryName(entry.getName())) == null
-                            || !normalized.startsWith(compatibilityScanPrefix)) {
-                        continue;
-                    }
-                    String compatibilityPath = normalized.substring(
-                            (this.rootPrefix + type.getDirectory() + "/" + namespace + "/").length());
-                    String legacyPath = NonPrefixedZipResourcePack.toGeckoLib4Path(compatibilityPath);
-                    Identifier id = legacyPath == null ? null : Identifier.tryParse(namespace + ":" + legacyPath);
-                    if (id != null && emitted.add(id)) {
-                        consumer.accept(id, InputSupplier.create(this.zipFile, entry));
-                    }
-                }
-            }
+            consumer.accept(id, InputSupplier.create(this.zipFile, entry));
         }
     }
 
@@ -154,33 +122,6 @@ extends AbstractFileResourcePack {
             out.append(normalized);
         }
         return out.toString();
-    }
-
-    /** Maps GeckoLib 4 resource requests to the GeckoLib 5 layout used by the original pack. */
-    private static String toGeckoLib5Path(String path) {
-        if (path == null) {
-            return null;
-        }
-        if (path.equals("geo") || path.startsWith("geo/")) {
-            return "geckolib/models" + path.substring("geo".length());
-        }
-        if (path.equals("animations") || path.startsWith("animations/")) {
-            return "geckolib/animations" + path.substring("animations".length());
-        }
-        return null;
-    }
-
-    private static String toGeckoLib4Path(String path) {
-        if (path == null) {
-            return null;
-        }
-        if (path.equals("geckolib/models") || path.startsWith("geckolib/models/")) {
-            return "geo" + path.substring("geckolib/models".length());
-        }
-        if (path.equals("geckolib/animations") || path.startsWith("geckolib/animations/")) {
-            return "animations" + path.substring("geckolib/animations".length());
-        }
-        return null;
     }
 
     static final class Factory
