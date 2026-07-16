@@ -26,7 +26,7 @@
 - 1.20.1 GeckoLib 替换渲染器已接入逐骨骼物品层，`propright`/`propleft` 道具（包括胡萝卜）会按动画骨骼实际渲染。
 - 核心成人玩法中文已改为直译，并为花粉混合物、性欲增幅剂、性欲抑制剂和生物性欲锁定器增加用途提示。
 
-详细历史见 [PORTING_STATUS.md](PORTING_STATUS.md)，协作约定见 [docs/DEVELOPMENT_ZH.md](docs/DEVELOPMENT_ZH.md)，玩法说明见 [docs/GAMEPLAY_ZH.md](docs/GAMEPLAY_ZH.md)。
+详细历史见 [PORTING_STATUS.md](PORTING_STATUS.md)，协作约定见 [docs/DEVELOPMENT_ZH.md](docs/DEVELOPMENT_ZH.md)，快速玩法说明见 [docs/GAMEPLAY_ZH.md](docs/GAMEPLAY_ZH.md)，完整玩法、配置与资源包说明见 [docs/完整玩法配置与资源包指南_ZH.md](docs/完整玩法配置与资源包指南_ZH.md)。
 
 ## 目录结构
 
