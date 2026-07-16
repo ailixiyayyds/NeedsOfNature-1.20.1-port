@@ -227,6 +227,9 @@ Updated: 2026-07-16
   leaving GeckoLib's cache empty even though the external pack is enabled.
 - Deferred complete model-path canonicalization until after model override
   events so player and mob `.f`/`.m` gender model variants can be selected.
+- Removed UTF-8 BOM markers from 41 embedded animation/model JSON resources.
+  GeckoLib 4's strict Gson reader treated the BOM as malformed JSON at line 1,
+  column 1 even though the visible document began with `{`.
 - Added and validated Simplified Chinese localization: 681 NeedsOfNature keys
   and 102 Animation Director keys, with format placeholders kept in sync.
 - Verified the Forge 47.4.21 + Connector test instance loads 38 animation
