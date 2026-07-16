@@ -1,0 +1,121 @@
+{
+  "format_version": "1.8.0",
+  "animations": {
+    "wolfmwolf.p1": {
+      "loop": true,
+      "animation_length": 0.5,
+      "bones": {
+        "root": {
+          "position": {
+            "0.0": {
+              "vector": [0,0,-5]
+            },
+            "0.25": {
+              "vector": [0,0,-5.5],
+              "easing": "easeInOutQuad"
+            },
+            "0.5": {
+              "vector": [0,0,-5]
+            }
+          }
+        },
+        "wolf": {
+          "position": {
+            "vector": [0,0,0]
+          }
+        },
+        "frontbody": {
+          "rotation": {
+            "vector": [5,0,0]
+          },
+          "position": {
+            "vector": [0,-4,0]
+          }
+        },
+        "head": {
+          "rotation": {
+            "0.0": {
+              "vector": [0,0,0]
+            },
+            "0.25": {
+              "vector": [-10,0,0],
+              "easing": "easeInOutCubic"
+            },
+            "0.5": {
+              "vector": [0,0,0]
+            }
+          }
+        },
+        "leg3": {
+          "rotation": {
+            "0.0": {
+              "vector": [-39.9011,2.684,14.2201]
+            },
+            "0.25": {
+              "vector": [-39.613,5.8829,18.0742]
+            },
+            "0.5": {
+              "vector": [-39.9011,2.684,14.2201]
+            }
+          },
+          "position": {
+            "vector": [-1.5,2,0]
+          }
+        },
+        "leg4": {
+          "rotation": {
+            "0.0": {
+              "vector": [-39.9011,2.684,-14.2201]
+            },
+            "0.25": {
+              "vector": [-39.9733,-0.527,-18.054]
+            },
+            "0.5": {
+              "vector": [-39.9011,2.684,-14.2201]
+            }
+          },
+          "position": {
+            "vector": [1.5,2,0]
+          }
+        },
+        "body": {
+          "scale": {
+            "vector": [0.99,1,1]
+          }
+        },
+        "leg1": {
+          "rotation": {
+            "0.0": {
+              "vector": [0,0,5]
+            },
+            "0.25": {
+              "vector": [5,0,5]
+            },
+            "0.5": {
+              "vector": [0,0,5]
+            }
+          },
+          "position": {
+            "vector": [-0.25,0,1]
+          }
+        },
+        "leg2": {
+          "rotation": {
+            "0.0": {
+              "vector": [0,0,-5]
+            },
+            "0.25": {
+              "vector": [5,0,-5]
+            },
+            "0.5": {
+              "vector": [0,0,-5]
+            }
+          },
+          "position": {
+            "vector": [0.25,0,1]
+          }
+        }
+      }
+    }
+  }
+}

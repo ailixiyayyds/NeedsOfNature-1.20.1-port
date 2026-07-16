@@ -222,6 +222,11 @@ Updated: 2026-07-16
 - Added the GeckoLib 4 horse collector model path and corrected AFW animation
   resource IDs, fixing the manual-animation red placeholder and collector
   placement crash reported on Forge/Connector.
+- Embedded the default GeckoLib 4 AFW animation/model copies in the mod JAR as
+  well as the external pack. This avoids Connector reload-listener ordering
+  leaving GeckoLib's cache empty even though the external pack is enabled.
+- Deferred complete model-path canonicalization until after model override
+  events so player and mob `.f`/`.m` gender model variants can be selected.
 - Added and validated Simplified Chinese localization: 681 NeedsOfNature keys
   and 102 Animation Director keys, with format placeholders kept in sync.
 - Verified the Forge 47.4.21 + Connector test instance loads 38 animation

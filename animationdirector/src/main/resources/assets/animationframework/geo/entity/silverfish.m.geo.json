@@ -1,0 +1,171 @@
+{
+	"format_version": "1.12.0",
+	"afw_bone_textures": {
+		"d2": "needsofnature:textures/entity/silverfish/silverfish_features.png",
+		"d3": "needsofnature:textures/entity/silverfish/silverfish_features.png"
+	},
+	"minecraft:geometry": [
+		{
+			"description": {
+				"identifier": "geometry.unknown",
+				"texture_width": 64,
+				"texture_height": 32,
+				"visible_bounds_width": 3,
+				"visible_bounds_height": 1.5,
+				"visible_bounds_offset": [0, 0.25, 0]
+			},
+			"bones": [
+				{
+					"name": "root",
+					"pivot": [0, 0, 0]
+				},
+				{
+					"name": "silverfish",
+					"parent": "root",
+					"pivot": [0, 0, 0]
+				},
+				{
+					"name": "frontbody",
+					"parent": "silverfish",
+					"pivot": [0, 2, -1]
+				},
+				{
+					"name": "body3",
+					"parent": "frontbody",
+					"pivot": [0, 0, -1],
+					"cubes": [
+						{"origin": [-3, 0, -4], "size": [6, 4, 3], "uv": [0, 9]}
+					]
+				},
+				{
+					"name": "wing1",
+					"parent": "body3",
+					"pivot": [0, 8, -2.5],
+					"cubes": [
+						{"origin": [-5, 0, -4], "size": [10, 8, 3], "uv": [20, 0]}
+					]
+				},
+				{
+					"name": "body2",
+					"parent": "body3",
+					"pivot": [0, 1.5, -4],
+					"cubes": [
+						{"origin": [-2, 0, -6], "size": [4, 3, 2], "uv": [0, 4]}
+					]
+				},
+				{
+					"name": "wing3",
+					"parent": "body2",
+					"pivot": [0, 5, -5],
+					"cubes": [
+						{"origin": [-3, 0, -6.5], "size": [6, 5, 2], "uv": [20, 18]}
+					]
+				},
+				{
+					"name": "body1",
+					"parent": "body2",
+					"pivot": [0, 0.75, -6],
+					"cubes": [
+						{"origin": [-1.5, 0, -8], "size": [3, 2, 2], "uv": [0, 0]}
+					]
+				},
+				{
+					"name": "backbody",
+					"parent": "silverfish",
+					"pivot": [0, 1.5, -1]
+				},
+				{
+					"name": "body4",
+					"parent": "backbody",
+					"pivot": [0, 1.5, -1],
+					"cubes": [
+						{"origin": [-1.5, 0, -1], "size": [3, 3, 3], "uv": [0, 16]}
+					]
+				},
+				{
+					"name": "body5",
+					"parent": "body4",
+					"pivot": [0, 1, 2],
+					"cubes": [
+						{"origin": [-1, 0, 2], "size": [2, 2, 3], "uv": [0, 22]}
+					]
+				},
+				{
+					"name": "d",
+					"parent": "body5",
+					"pivot": [0, 0, 3],
+					"rotation": [42.5, 0, 0],
+					"cubes": [
+						{"origin": [-1, -1, 2], "size": [2, 2, 2], "inflate": -0.21, "uv": [2, 12]}
+					]
+				},
+				{
+					"name": "d2",
+					"parent": "d",
+					"pivot": [0, 0.25852, 2.1853],
+					"rotation": [-15, 0, 0],
+					"cubes": [
+						{
+							"origin": [-1, -0.74148, 0.1853],
+							"size": [2, 2, 3],
+							"inflate": -0.3,
+							"uv": {
+								"north": {"uv": [8, 20], "uv_size": [4, 4]},
+								"east": {"uv": [0, 20], "uv_size": [8, 4]},
+								"south": {"uv": [20, 20], "uv_size": [4, 4]},
+								"west": {"uv": [12, 20], "uv_size": [8, 4]},
+								"up": {"uv": [8, 12], "uv_size": [4, 8]},
+								"down": {"uv": [12, 20], "uv_size": [4, -8]}
+							}
+						}
+					]
+				},
+				{
+					"name": "d3",
+					"parent": "d2",
+					"pivot": [0, 0.23492, 0.58551],
+					"rotation": [-20, 0, 0],
+					"cubes": [
+						{
+							"origin": [-1, -0.75656, -2.7292],
+							"size": [2, 2, 4],
+							"inflate": -0.42,
+							"uv": {
+								"north": {"uv": [8, 8], "uv_size": [4, 4]},
+								"east": {"uv": [0, 8], "uv_size": [8, 4]},
+								"south": {"uv": [20, 8], "uv_size": [4, 4]},
+								"west": {"uv": [12, 8], "uv_size": [8, 4]},
+								"up": {"uv": [8, 0], "uv_size": [4, 8]},
+								"down": {"uv": [12, 8], "uv_size": [4, -8]}
+							}
+						}
+					]
+				},
+				{
+					"name": "wing2",
+					"parent": "body5",
+					"pivot": [0, 4, 3.5],
+					"cubes": [
+						{"origin": [-3, 0, 2], "size": [6, 4, 3], "uv": [20, 11]}
+					]
+				},
+				{
+					"name": "body6",
+					"parent": "body5",
+					"pivot": [0, 0.5, 5],
+					"cubes": [
+						{"origin": [-1, 0, 5], "size": [2, 1, 2], "uv": [11, 0]}
+					]
+				},
+				{
+					"name": "body7",
+					"parent": "body6",
+					"pivot": [0, 0.5, 7],
+					"cubes": [
+						{"origin": [-0.5, 0, 7], "size": [1, 1, 2], "uv": [13, 4]}
+					]
+				}
+			]
+		}
+	]
+}

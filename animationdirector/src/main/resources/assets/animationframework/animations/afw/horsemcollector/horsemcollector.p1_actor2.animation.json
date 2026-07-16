@@ -1,0 +1,51 @@
+{
+  "format_version": "1.8.0",
+  "animations": {
+    "horsemcollector.p1": {
+      "loop": true,
+      "animation_length": 0.7917,
+      "bones": {
+        "collector": {
+          "rotation": {
+            "0.0": {
+              "vector": [0,0,0]
+            },
+            "0.25": {
+              "vector": [-1,0,0],
+              "easing": "easeOutCubic"
+            },
+            "0.7917": {
+              "vector": [0,0,0]
+            }
+          }
+        },
+        "head4": {
+          "rotation": {
+            "0.0": {
+              "vector": [0,0,0]
+            },
+            "0.25": {
+              "vector": [-2.5,0,0],
+              "easing": "easeOutCubic"
+            },
+            "0.7917": {
+              "vector": [0,0,0]
+            }
+          },
+          "position": {
+            "0.0": {
+              "vector": [0,0,0]
+            },
+            "0.25": {
+              "vector": [0,0.2,0.1],
+              "easing": "easeOutCubic"
+            },
+            "0.7917": {
+              "vector": [0,0,0]
+            }
+          }
+        }
+      }
+    }
+  }
+}

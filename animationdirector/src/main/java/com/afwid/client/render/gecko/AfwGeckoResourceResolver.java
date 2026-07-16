@@ -115,7 +115,10 @@ public final class AfwGeckoResourceResolver {
             hasModel = resolvedModel != null;
         }
         if (resolvedModel == null) {
-            resolvedModel = AfwGeckoResourceResolver.geoModelPath(primaryModel);
+            // Keep the logical ID until gender/variant render overrides have run.
+            // The default pack intentionally supplies player.f/player.m but no
+            // unsuffixed player model.
+            resolvedModel = primaryModel;
         }
         Identifier resolvedTexture = AfwGeckoResourceResolver.resourceExists(derivedTexture = new Identifier((String)entityTypeId.getNamespace(), (String)("textures/entity/" + entityPath + "/" + entityPath + ".png"))) ? derivedTexture : DEFAULT_MISSING_TEXTURE;
         return new ModelAndTexture(resolvedModel, resolvedTexture, !hasModel);

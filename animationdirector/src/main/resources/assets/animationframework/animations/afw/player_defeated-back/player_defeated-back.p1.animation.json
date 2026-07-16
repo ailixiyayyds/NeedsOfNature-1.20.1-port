@@ -1,0 +1,136 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"defeat.back": {
+			"loop": true,
+			"animation_length": 2,
+			"bones": {
+				"player": {
+					"rotation": {
+						"0.0": {
+							"vector": [90, 0, -180]
+						},
+						"2.0": {
+							"vector": [90, 0, -180]
+						}
+					},
+					"position": {
+						"0.0": {
+							"vector": [0, 2, 16]
+						},
+						"2.0": {
+							"vector": [0, 2, 16]
+						}
+					}
+				},
+				"waist": {
+					"rotation": {
+						"0.0": {
+							"vector": [0, 0, 0]
+						},
+						"1.25": {
+							"vector": [12.5, 0, 0],
+							"easing": "easeOutSine"
+						},
+						"2.0": {
+							"vector": [0, 0, 0],
+							"easing": "easeInBounce",
+							"easingArgs": [0.1]
+						}
+					}
+				},
+				"head": {
+					"rotation": {
+						"0.0": {
+							"vector": [0, 7.5, 0]
+						},
+						"1.25": {
+							"vector": [10.0845, 7.3854, 1.3096]
+						},
+						"2.0": {
+							"vector": [0, 7.5, 0]
+						}
+					}
+				},
+				"rightarm": {
+					"rotation": {
+						"0.0": {
+							"vector": [0, 0, 27.5]
+						},
+						"1.25": {
+							"vector": [17.8922, -9.0867, 26.0667],
+							"easing": "easeOutSine"
+						},
+						"2.0": {
+							"vector": [0, 0, 27.5],
+							"easing": "easeOutQuad"
+						}
+					}
+				},
+				"leftarm": {
+					"rotation": {
+						"0.0": {
+							"vector": [0, 0, -20]
+						},
+						"1.25": {
+							"vector": [14.1328, 5.0785, -19.37],
+							"easing": "easeOutSine"
+						},
+						"2.0": {
+							"vector": [0, 0, -20],
+							"easing": "easeOutQuad"
+						}
+					}
+				},
+				"rightleg": {
+					"rotation": {
+						"0.0": {
+							"vector": [0, 0, 25]
+						},
+						"1.25": {
+							"vector": [0, 0, 17.5],
+							"easing": "easeOutSine"
+						},
+						"2.0": {
+							"vector": [0, 0, 25],
+							"easing": "easeOutQuad"
+						}
+					},
+					"position": {
+						"0.0": {
+							"vector": [-1, 0, 0]
+						},
+						"2.0": {
+							"vector": [-1, 0, 0],
+							"easing": "easeOutQuad"
+						}
+					}
+				},
+				"leftleg": {
+					"rotation": {
+						"0.0": {
+							"vector": [0, 0, -10]
+						},
+						"1.25": {
+							"vector": [0, 0, -5],
+							"easing": "easeOutSine"
+						},
+						"2.0": {
+							"vector": [0, 0, -10],
+							"easing": "easeOutQuad"
+						}
+					},
+					"position": {
+						"0.0": {
+							"vector": [1, 0, 0]
+						},
+						"2.0": {
+							"vector": [1, 0, 0],
+							"easing": "easeOutQuad"
+						}
+					}
+				}
+			}
+		}
+	}
+}

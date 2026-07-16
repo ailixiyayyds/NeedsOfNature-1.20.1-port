@@ -1,0 +1,125 @@
+{
+    "afw_bone_textures": {
+      "d1": "needsofnature:textures/entity/pig/pig_features.png",
+      "d2": "needsofnature:textures/entity/pig/pig_features.png"
+    },
+	"format_version": "1.12.0",
+	"minecraft:geometry": [
+		{
+			"description": {
+				"identifier": "geometry.unknown",
+				"texture_width": 64,
+				"texture_height": 64,
+				"visible_bounds_width": 3,
+				"visible_bounds_height": 2.5,
+				"visible_bounds_offset": [0, 0.75, 0]
+			},
+			"bones": [
+				{
+					"name": "pig",
+					"pivot": [0, 13, 2]
+				},
+				{
+					"name": "body",
+					"parent": "pig",
+					"pivot": [0, 13, 2],
+					"rotation": [90, 0, 0],
+					"cubes": [
+						{"origin": [-5, 7, -5], "size": [10, 16, 8], "uv": [28, 8]}
+					]
+				},
+				{
+					"name": "d",
+					"parent": "body",
+					"pivot": [0, 10, -4.5],
+					"rotation": [20.75357, -43.07952, -14.51082],
+					"cubes": [
+						{"origin": [-1, 9, -5.5], "size": [2, 3, 2], "uv": [37, 26]}
+					]
+				},
+				{
+					"name": "d1",
+					"parent": "d",
+					"pivot": [-1.3866, 14.05176, -4.1366],
+					"cubes": [
+						{
+							"origin": [-0.8866, 11.05176, -5.3866],
+							"size": [1, 3, 1],
+							"inflate": -0.2,
+							"uv": {
+								"north": {"uv": [54, 54], "uv_size": [3, 9]},
+								"east": {"uv": [51, 54], "uv_size": [3, 9]},
+								"south": {"uv": [60, 54], "uv_size": [3, 9]},
+								"west": {"uv": [57, 54], "uv_size": [3, 9]},
+								"up": {"uv": [54, 51], "uv_size": [3, 3]},
+								"down": {"uv": [57, 54], "uv_size": [3, -3]}
+							}
+						}
+					]
+				},
+				{
+					"name": "d2",
+					"parent": "d1",
+					"pivot": [-1.3183, 16.52588, -4.0683],
+					"rotation": [-2.12084, 0.03926, 2.12084],
+					"cubes": [
+						{
+							"origin": [-0.78631, 13.6195, -5.28631],
+							"size": [1, 3, 1],
+							"inflate": -0.21,
+							"uv": {
+								"north": {"uv": [54, 42], "uv_size": [3, 9]},
+								"east": {"uv": [51, 42], "uv_size": [3, 9]},
+								"south": {"uv": [60, 42], "uv_size": [3, 9]},
+								"west": {"uv": [57, 42], "uv_size": [3, 9]},
+								"up": {"uv": [54, 39], "uv_size": [3, 3]},
+								"down": {"uv": [57, 42], "uv_size": [3, -3]}
+							}
+						}
+					]
+				},
+				{
+					"name": "head",
+					"parent": "pig",
+					"pivot": [0, 12, -6],
+					"cubes": [
+						{"origin": [-4, 8, -14], "size": [8, 8, 8], "uv": [0, 0]},
+						{"origin": [-2, 9, -15], "size": [4, 3, 1], "uv": [16, 16]}
+					]
+				},
+				{
+					"name": "leg1",
+					"parent": "pig",
+					"pivot": [-3, 6, 7],
+					"cubes": [
+						{"origin": [-5, 0, 5], "size": [4, 6, 4], "uv": [0, 16]}
+					]
+				},
+				{
+					"name": "leg2",
+					"parent": "pig",
+					"pivot": [3, 6, 7],
+					"cubes": [
+						{"origin": [1, 0, 5], "size": [4, 6, 4], "uv": [0, 16]}
+					]
+				},
+				{
+					"name": "leg3",
+					"parent": "pig",
+					"pivot": [-3, 6, -5],
+					"cubes": [
+						{"origin": [-5, 0, -7], "size": [4, 6, 4], "uv": [0, 16]}
+					]
+				},
+				{
+					"name": "leg4",
+					"parent": "pig",
+					"pivot": [3, 6, -5],
+					"cubes": [
+						{"origin": [1, 0, -7], "size": [4, 6, 4], "uv": [0, 16]}
+					]
+				}
+			]
+		}
+	]
+}

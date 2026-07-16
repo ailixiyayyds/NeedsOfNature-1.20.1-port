@@ -1,0 +1,109 @@
+{
+  "format_version": "1.8.0",
+  "animations": {
+    "horsemplayer-slab.p1": {
+      "loop": true,
+      "animation_length": 0.7917,
+      "bones": {
+        "player": {
+          "rotation": {
+            "vector": [90,0,-180]
+          },
+          "position": {
+            "0.0": {
+              "vector": [0,10,20]
+            },
+            "0.25": {
+              "vector": [0,10,19.8],
+              "easing": "easeOutSine"
+            },
+            "0.7917": {
+              "vector": [0,10,20]
+            }
+          }
+        },
+        "head": {
+          "rotation": {
+            "0.0": {
+              "vector": [27.5,0,0]
+            },
+            "0.25": {
+              "vector": [22.5,0,0],
+              "easing": "easeOutQuart"
+            },
+            "0.7917": {
+              "vector": [27.5,0,0]
+            }
+          }
+        },
+        "rightarm": {
+          "rotation": {
+            "0.0": {
+              "vector": [-27.5,0,2.5]
+            },
+            "0.25": {
+              "vector": [-25.502,-0.0872,2.4985],
+              "easing": "easeOutSine"
+            },
+            "0.7917": {
+              "vector": [-27.5,0,2.5]
+            }
+          }
+        },
+        "leftarm": {
+          "rotation": {
+            "0.0": {
+              "vector": [-27.5,0,-2.5]
+            },
+            "0.25": {
+              "vector": [-24.5029,0.1308,-2.4966],
+              "easing": "easeOutSine"
+            },
+            "0.7917": {
+              "vector": [-27.5,0,-2.5]
+            }
+          }
+        },
+        "rightleg": {
+          "rotation": {
+            "0.0": {
+              "vector": [-25,0,30]
+            },
+            "0.25": {
+              "vector": [-20.6672,2.4976,29.9055],
+              "easing": "easeInOutSine"
+            },
+            "0.7917": {
+              "vector": [-25,0,30]
+            }
+          },
+          "position": {
+            "vector": [-1,1.1,0]
+          }
+        },
+        "leftleg": {
+          "rotation": {
+            "0.0": {
+              "vector": [-25,0,-30]
+            },
+            "0.25": {
+              "vector": [-20.6672,2.4976,-29.9055],
+              "easing": "easeInOutSine"
+            },
+            "0.7917": {
+              "vector": [-25,0,-30]
+            }
+          },
+          "position": {
+            "vector": [1,1.1,0]
+          }
+        }
+      },
+      "sound_effects": {
+        "0.00": {
+          "effect": "reactiveimpact"
+        }
+      }
+    }
+  }
+}

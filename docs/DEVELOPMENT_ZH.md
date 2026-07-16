@@ -103,6 +103,8 @@ needsofnature/src/main/resources/assets/needsofnature/lang/
 - 修复未定义发光贴图时 `getEmissiveTextures(model) == null` 导致的玩家替换渲染崩溃。
 - 默认 ZIP 内容包同时保留 GeckoLib 5 原目录和 GeckoLib 4 兼容副本：`geckolib/models/**` 对应 `geo/**`，`geckolib/animations/**` 对应 `animations/**`。不要在 Forge/Connector 资源读取阶段动态映射 ZIP 流；并行重载会令 GeckoLib 4 读到无效内容。
 - AFW 动画解析器统一返回 GeckoLib 4 实际缓存键；马用液体收集器内置模型同时提供 `geo/entity/horse_liquid_collector.geo.json`，避免实体创建后渲染阶段崩溃。
+- Forge/Connector 下 GeckoLib 的重载监听器可能看不到稍后注册的外部包资源，因此默认 AFW 动画和模型的 GeckoLib 4 副本也直接编入 Animation Director JAR。外部默认包仍负责数据定义、贴图与配置。
+- 基础模型在渲染覆盖事件执行前保持 `entity/<type>` 逻辑 ID，随后选择 `.f`/`.m` 性别模型，最后才规范化为 `geo/**.geo.json` 缓存键。
 
 ## 9. 提交前检查
 
