@@ -19,7 +19,7 @@
 - Forge 47.4.21 + Connector beta.49 已能启动、加载默认包、进入世界并同步网络状态。
 - 已内置简体中文：NeedsOfNature 681 个语言键，Animation Director 102 个语言键。
 - 已修复 Forge/Connector 下的 GeckoLib 渲染、资源包集合、Mixin 描述符和物品渲染兼容问题。
-- 最新修复已兼容原版内容包使用的 GeckoLib 5 资源目录：默认包和模组 JAR 都携带 GeckoLib 4 所需的 `geo`、`animations` 资源，避免 Forge/Connector 的资源监听顺序令 GeckoLib 缓存漏掉外部包。玩家 `.f/.m` 性别模型会在最终资源解析前选择。
+- 最新修复已兼容原版内容包使用的 GeckoLib 5 资源目录：GeckoLib 4 所需的 `geo`、`animations` 资源只编入模组 JAR，外部默认包保留原 GeckoLib 5 目录和数据定义，避免 Forge/Connector 让外部包的同名资源覆盖有效 JAR 资源。玩家 `.f/.m` 性别模型会在最终资源解析前选择。
 
 详细历史见 [PORTING_STATUS.md](PORTING_STATUS.md)，协作约定见 [docs/DEVELOPMENT_ZH.md](docs/DEVELOPMENT_ZH.md)，玩法说明见 [docs/GAMEPLAY_ZH.md](docs/GAMEPLAY_ZH.md)。
 

@@ -214,11 +214,11 @@ Updated: 2026-07-16
   a missing optional Animation Director hook from aborting startup.
 - Made replacement-model emissive texture resolution null-safe. Models that do
   not define an emissive texture no longer crash in `AfwGeckoReplacedRender`.
-- Added physical GeckoLib 4 compatibility copies to the default ZIP content
-  pack. Models and animations now exist under both the original GeckoLib 5
-  layout and GeckoLib 4's `geo` and `animations` cache paths. A first virtual
-  ZIP mapping attempt was removed because Forge/Connector could read an invalid
-  stream during its parallel initial resource reload.
+- Kept the external default ZIP on its original GeckoLib 5 layout and embedded
+  the GeckoLib 4 `geo` and `animations` copies only in the mod JAR. External
+  GL4 aliases were removed after Forge/Connector selected them over valid JAR
+  resources and produced malformed input during parallel initial reload. An
+  earlier virtual ZIP mapping attempt was removed for the same reason.
 - Added the GeckoLib 4 horse collector model path and corrected AFW animation
   resource IDs, fixing the manual-animation red placeholder and collector
   placement crash reported on Forge/Connector.
