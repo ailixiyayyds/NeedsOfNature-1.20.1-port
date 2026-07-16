@@ -246,10 +246,12 @@ public final class AfwActorAnimatable implements GeoAnimatable {
             Double timelineSeconds,
             boolean translucent,
             List<Identifier> layerTextures,
-            List<Identifier> emissiveTextures) {
+            List<Identifier> emissiveTextures,
+            Map<String, com.afwid.api.AfwGeckoModelEvents.BoneItemProp> boneItems) {
         public RenderContext {
             layerTextures = layerTextures == null ? List.of() : List.copyOf(layerTextures);
             emissiveTextures = emissiveTextures == null ? List.of() : List.copyOf(emissiveTextures);
+            boneItems = boneItems == null ? Map.of() : Map.copyOf(boneItems);
         }
     }
 }

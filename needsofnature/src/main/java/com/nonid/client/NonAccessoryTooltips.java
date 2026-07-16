@@ -16,6 +16,7 @@
 package com.nonid.client;
 
 import com.nonid.NonAccessoryEffects;
+import com.nonid.NeedsOfNature;
 import com.nonid.NonTrinketsIntegration;
 import com.nonid.data.NonAccessoryBehavior;
 import com.nonid.data.NonAccessoryDefinitions;
@@ -47,6 +48,15 @@ public final class NonAccessoryTooltips {
             return;
         }
         Identifier itemId = Registries.ITEM.getId(stack.getItem());
+        if (itemId.equals(NeedsOfNature.id("flower_mix"))) {
+            lines.add(Text.translatable("item.needsofnature.tooltip.flower_mix").formatted(Formatting.GRAY));
+        } else if (itemId.equals(NeedsOfNature.id("energy_augmenter"))) {
+            lines.add(Text.translatable("item.needsofnature.tooltip.energy_augmenter").formatted(Formatting.RED));
+        } else if (itemId.equals(NeedsOfNature.id("energy_diminisher"))) {
+            lines.add(Text.translatable("item.needsofnature.tooltip.energy_diminisher").formatted(Formatting.AQUA));
+        } else if (itemId.equals(NeedsOfNature.id("energy_stabilizer"))) {
+            lines.add(Text.translatable("item.needsofnature.tooltip.energy_stabilizer").formatted(Formatting.GOLD));
+        }
         if (!NonAccessoryDefinitions.hasDefinition(itemId)) {
             return;
         }

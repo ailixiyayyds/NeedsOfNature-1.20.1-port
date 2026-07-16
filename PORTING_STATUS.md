@@ -234,7 +234,7 @@ Updated: 2026-07-16
   recompression made Connector expose the pack profile but lose its item
   textures and all AFW definitions. Root and nested external ZIPs now use the
   same custom resource-pack reader.
-- Added and validated Simplified Chinese localization: 681 NeedsOfNature keys
+- Added and validated Simplified Chinese localization: 685 NeedsOfNature keys
   and 102 Animation Director keys, with format placeholders kept in sync.
 - Verified the Forge 47.4.21 + Connector test instance loads 38 animation
   definitions, five accessory definitions, enters a world, and completes the
@@ -245,6 +245,11 @@ Updated: 2026-07-16
 - Locked replacement-model body/head orientation to the animation start
   transform. First-person mouse look now rotates only the camera instead of
   writing the camera yaw back into the animated player model.
+- Added the missing GeckoLib 4 per-bone item render layer. AFW stage props and
+  packet overrides on `propright`/`propleft`, including the carrot manual-peak
+  prop, now reach the replacement renderer instead of being discarded.
+- Reworked the core Simplified Chinese gameplay terminology and documented the
+  exact pregnancy trigger, fertility brewing chain, and energy-adjust item use.
 
 ## Compatibility notes
 

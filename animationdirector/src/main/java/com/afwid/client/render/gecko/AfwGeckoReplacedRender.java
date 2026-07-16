@@ -3,7 +3,9 @@ package com.afwid.client.render.gecko;
 import com.afwid.AnimationFramework;
 import com.afwid.api.AfwGeckoModelEvents;
 import com.afwid.client.render.gecko.layer.AfwEmissiveTextureGeoLayer;
+import com.afwid.client.render.gecko.layer.AfwBoneItemGeoLayer;
 import com.afwid.client.render.gecko.layer.AfwLayerTextureGeoLayer;
+import java.util.LinkedHashMap;
 import com.afwid.client.runtime.AfwClientAnimationRuntime;
 import java.util.List;
 import com.afwid.util.AfwEntityVariants;
@@ -68,7 +70,8 @@ public final class AfwGeckoReplacedRender {
         AfwActorAnimatable.RenderContext context = new AfwActorAnimatable.RenderContext(
                 entity.getUuid(), instanceId, animationId, animationResource,
                 resources.model(), resources.texture(), animationSpeed, timelineSeconds,
-                resources.translucent(), resources.layerTextures(), resources.emissiveTextures());
+                resources.translucent(), resources.layerTextures(), resources.emissiveTextures(),
+                resources.boneItems());
         AfwClientAnimationRuntime.LockedOrientation locked =
                 AfwClientAnimationRuntime.getLockedOrientation(entity.getUuid());
         OrientationSnapshot orientation = null;
@@ -134,6 +137,7 @@ public final class AfwGeckoReplacedRender {
         AfwReplacedEntityRenderer created = new AfwReplacedEntityRenderer(
                 factoryContext, new AfwActorGeoModel(), AfwActorAnimatable.INSTANCE);
         created.withScale(ACTIVE_MODEL_SCALE);
+        created.addRenderLayer(new AfwBoneItemGeoLayer(created));
         created.addRenderLayer(new AfwLayerTextureGeoLayer(created));
         created.addRenderLayer(new AfwEmissiveTextureGeoLayer(created));
         AfwReplacedEntityRenderer prior = RENDERERS.putIfAbsent(key, created);
@@ -147,6 +151,7 @@ public final class AfwGeckoReplacedRender {
         Identifier texture = base.texture();
         boolean explicitTexture = false;
         List<Identifier> layerTextures = List.of();
+        Map<String, AfwGeckoModelEvents.BoneItemProp> renderBoneItems = Map.of();
 
         if (PLAYER_TYPE_ID.equals(entityTypeId) && entity instanceof AbstractClientPlayerEntity player
                 && "slim".equals(player.getModel())) {
@@ -189,6 +194,9 @@ public final class AfwGeckoReplacedRender {
                         .map(AfwVanillaTextureResolver::resolveTexture)
                         .toList();
             }
+            if (renderOverride.boneItems() != null) {
+                renderBoneItems = renderOverride.boneItems();
+            }
         }
 
         Identifier resolvedModelResource = AfwGeckoResourceResolver.resolveGeoModelResource(model);
@@ -219,7 +227,15 @@ public final class AfwGeckoReplacedRender {
                 .map(AfwVanillaTextureResolver::resolveTexture)
                 .filter(value -> value != null)
                 .toList();
-        return new ResolvedResources(model, texture, translucent, layerTextures, emissiveTextures);
+        LinkedHashMap<String, AfwGeckoModelEvents.BoneItemProp> boneItems =
+                new LinkedHashMap<>(renderBoneItems);
+        // Stage metadata and network overrides are authoritative, while the
+        // render override map supplies a fallback (for example held carrots).
+        boneItems.putAll(AfwClientAnimationRuntime.findLatestBoneItemsForActor(entity.getUuid()));
+        boneItems.entrySet().removeIf(entry -> entry.getKey() == null || entry.getValue() == null
+                || entry.getValue().stack() == null || entry.getValue().stack().isEmpty());
+        return new ResolvedResources(model, texture, translucent, layerTextures, emissiveTextures,
+                Map.copyOf(boneItems));
     }
 
     @SuppressWarnings({"rawtypes", "unchecked"})
@@ -255,6 +271,7 @@ public final class AfwGeckoReplacedRender {
 
     private record ResolvedResources(Identifier model, Identifier texture, boolean translucent,
                                      List<Identifier> layerTextures,
-                                     List<Identifier> emissiveTextures) {
+                                     List<Identifier> emissiveTextures,
+                                     Map<String, AfwGeckoModelEvents.BoneItemProp> boneItems) {
     }
 }

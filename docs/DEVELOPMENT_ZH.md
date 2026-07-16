@@ -84,7 +84,7 @@ animationdirector/src/main/resources/assets/animationframework/lang/
 needsofnature/src/main/resources/assets/needsofnature/lang/
 ```
 
-当前英文/中文键数分别为 102 和 681。新增键时应检查：
+Animation Director 中文键数为 102，NeedsOfNature 中文键数为 685。新增键时应检查：
 
 - 两种语言键集合一致；
 - `%s`、`%d` 等格式占位符数量和顺序一致；
