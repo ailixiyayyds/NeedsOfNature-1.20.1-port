@@ -42,7 +42,6 @@ import java.util.function.Consumer;
 import java.util.stream.Stream;
 import net.fabricmc.loader.api.FabricLoader;
 import net.minecraft.text.Text;
-import net.minecraft.resource.ZipResourcePack;
 import net.minecraft.resource.DirectoryResourcePack;
 import net.minecraft.resource.ResourceType;
 import net.minecraft.resource.ResourcePackProvider;
@@ -170,10 +169,10 @@ implements ResourcePackProvider {
 
     private static ResourcePackProfile.PackFactory createPackFactory(NonPackRootResolver.ResolvedRoot root) {
         if (root.isZip()) {
-            if (root.isNested()) {
-                return new NonPrefixedZipResourcePack.Factory(root.sourcePath(), root.zipPrefix());
-            }
-            return name -> new ZipResourcePack(name, root.sourcePath().toFile(), false);
+            // Use the same deterministic reader for both root and nested ZIPs.
+            // Forge/Connector's vanilla ZipResourcePack path can expose the
+            // profile while failing subsequent asset/data lookups for this pack.
+            return new NonPrefixedZipResourcePack.Factory(root.sourcePath(), root.zipPrefix());
         }
         return name -> new DirectoryResourcePack(name, root.rootPath(), false);
     }

@@ -230,6 +230,10 @@ Updated: 2026-07-16
 - Removed UTF-8 BOM markers from 41 embedded animation/model JSON resources.
   GeckoLib 4's strict Gson reader treated the BOM as malformed JSON at line 1,
   column 1 even though the visible document began with `{`.
+- Restored the original default-pack ZIP byte-for-byte after a PowerShell
+  recompression made Connector expose the pack profile but lose its item
+  textures and all AFW definitions. Root and nested external ZIPs now use the
+  same custom resource-pack reader.
 - Added and validated Simplified Chinese localization: 681 NeedsOfNature keys
   and 102 Animation Director keys, with format placeholders kept in sync.
 - Verified the Forge 47.4.21 + Connector test instance loads 38 animation

@@ -106,6 +106,7 @@ needsofnature/src/main/resources/assets/needsofnature/lang/
 - Forge/Connector 下 GeckoLib 的重载监听器可能看不到稍后注册的外部包资源，因此默认 AFW 动画和模型的 GeckoLib 4 副本也直接编入 Animation Director JAR。外部默认包仍负责数据定义、贴图与配置。
 - 基础模型在渲染覆盖事件执行前保持 `entity/<type>` 逻辑 ID，随后选择 `.f`/`.m` 性别模型，最后才规范化为 `geo/**.geo.json` 缓存键。
 - 兼容资源 JSON 必须使用无 BOM 的 UTF-8。原内容包中部分动画带 `EF BB BF`，GeckoLib 4 使用的 Gson 严格读取器会在第 1 行第 1 列抛出 `MalformedJsonException`；当前构建已清理 41 个此类文件。
+- 默认内容包 ZIP 必须保留原始归档结构。根目录 ZIP 与带前缀 ZIP 均由 `NonPrefixedZipResourcePack` 读取；实测用 PowerShell `Compress-Archive` 重打包后，Connector 虽显示资源包已启用，却会漏掉物品贴图和全部 `afw_animdefs`。
 
 ## 9. 提交前检查
 
