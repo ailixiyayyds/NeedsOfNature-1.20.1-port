@@ -69,16 +69,45 @@ public final class AfwGeckoReplacedRender {
                 entity.getUuid(), instanceId, animationId, animationResource,
                 resources.model(), resources.texture(), animationSpeed, timelineSeconds,
                 resources.translucent(), resources.layerTextures(), resources.emissiveTextures());
+        AfwClientAnimationRuntime.LockedOrientation locked =
+                AfwClientAnimationRuntime.getLockedOrientation(entity.getUuid());
+        OrientationSnapshot orientation = null;
+        float renderYaw = entityYaw;
+        if (locked != null) {
+            orientation = new OrientationSnapshot(
+                    entity.bodyYaw, entity.prevBodyYaw, entity.headYaw, entity.prevHeadYaw,
+                    entity.getPitch(), entity.prevPitch);
+            entity.bodyYaw = locked.bodyYaw();
+            entity.prevBodyYaw = locked.bodyYaw();
+            entity.headYaw = locked.headYaw();
+            entity.prevHeadYaw = locked.headYaw();
+            entity.setPitch(locked.pitch());
+            entity.prevPitch = locked.pitch();
+            renderYaw = locked.bodyYaw();
+        }
         AfwActorAnimatable.INSTANCE.beginRender(context);
         try {
-            renderer.render(entity, entityYaw, tickDelta, matrices, vertices, packedLight);
+            renderer.render(entity, renderYaw, tickDelta, matrices, vertices, packedLight);
             return true;
         } catch (RuntimeException exception) {
             AnimationFramework.LOGGER.error("[AFW] GeckoLib 1.20.1 render failed", exception);
             return false;
         } finally {
             AfwActorAnimatable.INSTANCE.endRender();
+            if (orientation != null) {
+                entity.bodyYaw = orientation.bodyYaw();
+                entity.prevBodyYaw = orientation.prevBodyYaw();
+                entity.headYaw = orientation.headYaw();
+                entity.prevHeadYaw = orientation.prevHeadYaw();
+                entity.setPitch(orientation.pitch());
+                entity.prevPitch = orientation.prevPitch();
+            }
         }
+    }
+
+    private record OrientationSnapshot(float bodyYaw, float prevBodyYaw,
+                                       float headYaw, float prevHeadYaw,
+                                       float pitch, float prevPitch) {
     }
 
     private static AfwReplacedEntityRenderer getOrCreateRenderer(Identifier entityTypeId,

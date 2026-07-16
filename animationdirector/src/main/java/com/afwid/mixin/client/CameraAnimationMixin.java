@@ -177,16 +177,8 @@ public abstract class CameraAnimationMixin {
         Vec3d constrainedLook = AfwFirstPersonLookConstraint.constrain(desiredLook, posedPose, afw$lastConstrainedLook);
         float constrainedYaw = AfwFirstPersonLookConstraint.toMinecraftYaw(constrainedLook, desiredYaw);
         float constrainedPitch = AfwFirstPersonLookConstraint.toMinecraftPitch(constrainedLook);
-        focusedPlayer.prevYaw = constrainedYaw;
-        focusedPlayer.prevPitch = constrainedPitch;
-        focusedPlayer.setYaw(constrainedYaw);
-        focusedPlayer.setPitch(constrainedPitch);
-        focusedPlayer.prevHeadYaw = constrainedYaw;
-        focusedPlayer.headYaw = constrainedYaw;
-        focusedPlayer.setHeadYaw(constrainedYaw);
-        focusedPlayer.prevBodyYaw = constrainedYaw;
-        focusedPlayer.bodyYaw = constrainedYaw;
-        focusedPlayer.setBodyYaw(constrainedYaw);
+        // Rotate only the animation camera. Mutating the focused player here
+        // made mouse-look rotate the replacement model as well.
         this.setRotation(constrainedYaw, constrainedPitch);
         Vec3d desiredCameraPos = posedPose.worldPos().add(constrainedLook.multiply(0.2));
         this.setPos(AfwFirstPersonCameraCollision.resolve((CollisionView)area, desiredCameraPos));

@@ -1092,6 +1092,15 @@ public final class AfwServerAnimationController {
             lockedPitch = 0.0f;
             preservePlayerLook = true;
         }
+        // Every animation actor must keep the authored/start orientation.  The
+        // camera is still free to orbit, but its yaw must not become the
+        // replacement model's body yaw on the client.
+        if (!lockOrientation) {
+            lockOrientation = true;
+            lockedYaw = sharedTransform.yaw();
+            lockedHeadYaw = sharedTransform.headYaw();
+            lockedPitch = sharedTransform.pitch();
+        }
         Set<UUID> actorUuidSet = Set.copyOf(new HashSet<UUID>(actorUuids));
         List<String> safeActorKeys = actorKeys != null && actorKeys.size() == actorUuids.size() ? List.copyOf(actorKeys) : List.of();
         safeStages = stages == null ? List.of() : List.copyOf(stages);

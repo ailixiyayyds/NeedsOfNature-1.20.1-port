@@ -340,7 +340,7 @@ implements ClientModInitializer {
             layers.addAll(NeedsOfNatureClient.resolveHorseOverlays(entity));
             layers.addAll(NeedsOfNatureClient.resolveWolfOverlays(entity));
             List<Identifier> layerTextures = layers.isEmpty() ? List.of() : List.copyOf(layers);
-            Map<String, AfwGeckoModelEvents.BoneItemProp> fallbackBoneItems = NeedsOfNatureClient.resolveFillBottleFallbackBoneItems(entity);
+            Map<String, AfwGeckoModelEvents.BoneItemProp> fallbackBoneItems = NeedsOfNatureClient.resolveFallbackBoneItems(entity);
             Map<String, Identifier> boneTextures = NeedsOfNatureClient.resolveSheepBoneTextures(entity);
             Map<String, Boolean> boneVisibility = NeedsOfNatureClient.mergeBooleanMaps(NeedsOfNatureClient.resolveDonkeyChestBoneVisibility(entity), NeedsOfNatureClient.resolveSheepBoneVisibility(entity));
             Map<String, Set<Integer>> hiddenBoneCubeIndices = NeedsOfNatureClient.resolvePlayerSkinPartHiddenCubeIndices(entity);
@@ -1073,6 +1073,27 @@ implements ClientModInitializer {
             return Map.of();
         }
         return Map.of(RIGHT_PROP_BONE, new AfwGeckoModelEvents.BoneItemProp(NeedsOfNatureClient.createFilledBottlePropStack(entity)));
+    }
+
+    private static Map<String, AfwGeckoModelEvents.BoneItemProp> resolveFallbackBoneItems(LivingEntity entity) {
+        Map<String, AfwGeckoModelEvents.BoneItemProp> fillBottle =
+                NeedsOfNatureClient.resolveFillBottleFallbackBoneItems(entity);
+        if (!fillBottle.isEmpty() || entity == null) {
+            return fillBottle;
+        }
+        Identifier animationId = AfwClientAnimationRuntime.findLatestActiveAnimationIdContaining(entity.getUuid());
+        if (animationId == null || !animationId.getPath().contains("manual_peak-carrot")) {
+            return Map.of();
+        }
+        ItemStack held = entity.getMainHandStack();
+        if (!held.isOf(Items.CARROT) && !held.isOf(Items.GOLDEN_CARROT)) {
+            held = entity.getOffHandStack();
+        }
+        if (!held.isOf(Items.CARROT) && !held.isOf(Items.GOLDEN_CARROT)) {
+            return Map.of();
+        }
+        return Map.of(RIGHT_PROP_BONE,
+                new AfwGeckoModelEvents.BoneItemProp(held.copyWithCount(1)));
     }
 
     private static boolean trySetAfwRightHandPropOverride(UUID instanceId, UUID actorUuid, ItemStack stack) {

@@ -239,6 +239,12 @@ Updated: 2026-07-16
 - Verified the Forge 47.4.21 + Connector test instance loads 38 animation
   definitions, five accessory definitions, enters a world, and completes the
   dynamic-skin upload path.
+- Fixed manual carrot/golden-carrot playback visibility by retaining the
+  data-driven `player_manual_peak-carrot` selection and adding a client-side
+  held-prop fallback when the override packet arrives before the animation.
+- Locked replacement-model body/head orientation to the animation start
+  transform. First-person mouse look now rotates only the camera instead of
+  writing the camera yaw back into the animated player model.
 
 ## Compatibility notes
 

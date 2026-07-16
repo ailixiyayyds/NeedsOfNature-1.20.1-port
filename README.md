@@ -22,6 +22,7 @@
 - 最新修复已兼容原版内容包使用的 GeckoLib 5 资源目录：GeckoLib 4 所需的 `geo`、`animations` 资源只编入模组 JAR，外部默认包保留原 GeckoLib 5 目录和数据定义，避免 Forge/Connector 让外部包的同名资源覆盖有效 JAR 资源。玩家 `.f/.m` 性别模型会在最终资源解析前选择。
 - 所有编入 JAR 的 GeckoLib 4 JSON 均移除了 UTF-8 BOM；GeckoLib 4/Gson 会把 BOM 当成第 1 行第 1 列的非法字符。
 - 外部默认包保持原始 ZIP 字节结构，并通过项目自带的 ZIP 资源读取器同时提供客户端贴图和服务端数据；不要用 PowerShell `Compress-Archive` 重新打包，否则 Forge/Connector 下可能出现饰品贴图缺失和 AFW 定义数量为 0。
+- 手持胡萝卜或金胡萝卜按 `M` 会选择专用 `player_manual_peak-carrot` 动画，并带有右手道具显示兜底；动画播放期间人物身体/头部朝向固定，转动视角只改变镜头。
 
 详细历史见 [PORTING_STATUS.md](PORTING_STATUS.md)，协作约定见 [docs/DEVELOPMENT_ZH.md](docs/DEVELOPMENT_ZH.md)，玩法说明见 [docs/GAMEPLAY_ZH.md](docs/GAMEPLAY_ZH.md)。
 
