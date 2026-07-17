@@ -7,7 +7,7 @@
 	"authors": [
 		"L1Z0"
 	],
-	"icon": "assets/needsofnature/icon.png",
+	"icon": "icon.png",
 	"environment": "*",
 	"entrypoints": {
 		"main": [

@@ -7,7 +7,7 @@
   "authors": [
     "L1Z0"
   ],
-  "icon": "assets/animationframework/icon.png",
+  "icon": "icon.png",
   "environment": "*",
   "entrypoints": {
     "main": [
